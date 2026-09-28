@@ -1,0 +1,2818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Projects — SNK Ad Studio</title>
+  <meta
+    name="description"
+    content="Manage your SNK Ad Studio projects, duplicate, rename and open ads in the editor."
+  >
+
+  <style>
+    :root {
+      --bg: #080a0d;
+      --panel: #101419;
+      --panel-2: #141920;
+      --panel-3: #191f27;
+      --border: rgba(255,255,255,.09);
+      --border-strong: rgba(255,255,255,.14);
+
+      --text: #f4f7fa;
+      --muted: #8e98a6;
+      --muted-2: #66707d;
+
+      --accent: #d8a64b;
+      --accent-soft: rgba(216,166,75,.12);
+      --accent-border: rgba(216,166,75,.28);
+
+      --success: #5fd49a;
+      --danger: #ff6b6b;
+
+      --radius: 18px;
+      --radius-sm: 12px;
+
+      --shadow:
+        0 20px 60px rgba(0,0,0,.35);
+
+      --font:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          circle at 15% 0%,
+          rgba(216,166,75,.07),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(255,255,255,.035),
+          transparent 25%
+        ),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      overflow-x: hidden;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================
+       TOPBAR
+    ========================================= */
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 74px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 34px;
+
+      background: rgba(8,10,13,.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 190px;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 11px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f0c46d,
+          #b98128
+        );
+
+      color: #0a0b0d;
+      font-weight: 900;
+      font-size: 15px;
+
+      box-shadow:
+        0 8px 25px rgba(216,166,75,.16);
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .brand-name {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -.2px;
+    }
+
+    .brand-sub {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .9px;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav a {
+      color: var(--muted);
+      padding: 9px 13px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 650;
+      transition: .2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.045);
+    }
+
+    .nav a.active {
+      color: var(--text);
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+    }
+
+    .top-actions {
+      min-width: 190px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 9px;
+    }
+
+    .icon-button {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 11px;
+
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+
+      color: var(--muted);
+      transition: .2s ease;
+    }
+
+    .icon-button:hover {
+      color: var(--text);
+      border-color: var(--border-strong);
+      background: rgba(255,255,255,.06);
+    }
+
+    /* =========================================
+       PAGE
+    ========================================= */
+
+    .page {
+      width: min(1380px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 58px 0 90px;
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .page-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 35px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      margin-bottom: 13px;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(216,166,75,.5);
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: .98;
+      letter-spacing: -2.8px;
+      font-weight: 850;
+    }
+
+    .page-description {
+      margin-top: 15px;
+      max-width: 650px;
+
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .new-project-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding: 13px 18px;
+
+      border: 0;
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e5b85e,
+          #bd8730
+        );
+
+      color: #0b0c0e;
+      font-size: 13px;
+      font-weight: 850;
+
+      box-shadow:
+        0 12px 30px rgba(216,166,75,.14);
+
+      transition: .2s ease;
+    }
+
+    .new-project-btn:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 17px 35px rgba(216,166,75,.2);
+    }
+
+    /* =========================================
+       STATS
+    ========================================= */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 13px;
+      margin-bottom: 25px;
+    }
+
+    .stat {
+      padding: 19px;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.035),
+          rgba(255,255,255,.018)
+        );
+
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 750;
+    }
+
+    .stat-value {
+      margin-top: 9px;
+      font-size: 26px;
+      font-weight: 850;
+      letter-spacing: -.7px;
+    }
+
+    /* =========================================
+       TOOLBAR
+    ========================================= */
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      padding: 13px;
+
+      margin-bottom: 20px;
+
+      background: rgba(255,255,255,.018);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      max-width: 470px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      color: var(--muted-2);
+      font-size: 14px;
+    }
+
+    .search-box input {
+      width: 100%;
+      height: 42px;
+
+      padding: 0 15px 0 40px;
+
+      border: 1px solid var(--border);
+      border-radius: 11px;
+
+      background: rgba(255,255,255,.025);
+      color: var(--text);
+
+      outline: none;
+    }
+
+    .search-box input::placeholder {
+      color: var(--muted-2);
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent-border);
+      box-shadow: 0 0 0 3px rgba(216,166,75,.05);
+    }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .filter-btn {
+      padding: 9px 12px;
+
+      border: 1px solid transparent;
+      border-radius: 9px;
+
+      background: transparent;
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      transition: .2s ease;
+    }
+
+    .filter-btn:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.035);
+    }
+
+    .filter-btn.active {
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-color: var(--accent-border);
+    }
+
+    /* =========================================
+       PROJECT GRID
+    ========================================= */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+
+      min-height: 330px;
+
+      display: flex;
+      flex-direction: column;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.035),
+          rgba(255,255,255,.012)
+        );
+
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+
+      box-shadow: 0 10px 35px rgba(0,0,0,.12);
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+
+      border-color: rgba(216,166,75,.22);
+
+      box-shadow:
+        0 20px 55px rgba(0,0,0,.28);
+    }
+
+    .project-preview {
+      position: relative;
+
+      height: 185px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 30%,
+          rgba(216,166,75,.13),
+          transparent 40%
+        ),
+        linear-gradient(
+          135deg,
+          #12161c,
+          #090b0f
+        );
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .preview-9x16 {
+      width: 80px;
+      height: 142px;
+      border-radius: 8px;
+    }
+
+    .preview-1x1 {
+      width: 132px;
+      height: 132px;
+      border-radius: 9px;
+    }
+
+    .preview-16x9 {
+      width: 165px;
+      height: 94px;
+      border-radius: 8px;
+    }
+
+    .preview-frame {
+      position: relative;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(216,166,75,.16),
+          rgba(255,255,255,.025)
+        );
+
+      border: 1px solid rgba(255,255,255,.12);
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,.35);
+    }
+
+    .preview-frame::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          transparent 25%,
+          rgba(255,255,255,.07) 25%,
+          transparent 50%
+        );
+
+      opacity: .4;
+    }
+
+    .preview-content {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 10px;
+
+      text-align: center;
+
+      font-size: 9px;
+      line-height: 1.15;
+      font-weight: 850;
+      letter-spacing: -.2px;
+
+      color: white;
+      text-transform: uppercase;
+    }
+
+    .preview-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+
+      padding: 5px 8px;
+
+      border-radius: 7px;
+
+      background: rgba(8,10,13,.72);
+      border: 1px solid rgba(255,255,255,.09);
+
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 750;
+    }
+
+    .project-body {
+      flex: 1;
+      padding: 17px;
+    }
+
+    .project-title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .project-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -.2px;
+      line-height: 1.35;
+    }
+
+    .more-btn {
+      width: 30px;
+      height: 30px;
+
+      flex-shrink: 0;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--border);
+      border-radius: 8px;
+
+      background: rgba(255,255,255,.025);
+      color: var(--muted);
+
+      transition: .2s ease;
+    }
+
+    .more-btn:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+
+      margin-top: 10px;
+    }
+
+    .meta-pill {
+      padding: 5px 8px;
+
+      border-radius: 7px;
+
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+
+      color: var(--muted);
+
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .project-date {
+      margin-top: 12px;
+
+      color: var(--muted-2);
+      font-size: 11px;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 8px;
+
+      padding: 0 17px 17px;
+    }
+
+    .action-btn {
+      flex: 1;
+
+      height: 38px;
+
+      border-radius: 9px;
+
+      border: 1px solid var(--border);
+
+      background: rgba(255,255,255,.025);
+      color: var(--muted);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      transition: .2s ease;
+    }
+
+    .action-btn:hover {
+      color: var(--text);
+      background: rgba(255,255,255,.055);
+    }
+
+    .action-btn.primary {
+      color: #0a0b0d;
+
+      border-color: transparent;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e4b85f,
+          #b9822b
+        );
+    }
+
+    .action-btn.primary:hover {
+      transform: translateY(-1px);
+    }
+
+    /* =========================================
+       EMPTY STATE
+    ========================================= */
+
+    .empty-state {
+      display: none;
+
+      padding: 75px 25px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.028),
+          rgba(255,255,255,.012)
+        );
+
+      border: 1px dashed rgba(255,255,255,.12);
+      border-radius: var(--radius);
+    }
+
+    .empty-icon {
+      width: 65px;
+      height: 65px;
+
+      margin: 0 auto 18px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 18px;
+
+      background: var(--accent-soft);
+      border: 1px solid var(--accent-border);
+
+      color: var(--accent);
+
+      font-size: 25px;
+    }
+
+    .empty-state h2 {
+      font-size: 21px;
+      letter-spacing: -.5px;
+    }
+
+    .empty-state p {
+      max-width: 500px;
+      margin: 9px auto 20px;
+
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .empty-btn {
+      padding: 11px 16px;
+
+      border: 0;
+      border-radius: 10px;
+
+      background: var(--accent);
+      color: #0b0c0e;
+
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    /* =========================================
+       CONTEXT MENU
+    ========================================= */
+
+    .context-menu {
+      position: fixed;
+      z-index: 500;
+
+      display: none;
+
+      width: 175px;
+
+      padding: 6px;
+
+      background:
+        rgba(17,21,26,.97);
+
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,.5);
+
+      backdrop-filter: blur(20px);
+    }
+
+    .context-menu button {
+      width: 100%;
+
+      padding: 10px 11px;
+
+      border: 0;
+      border-radius: 8px;
+
+      background: transparent;
+      color: var(--muted);
+
+      text-align: left;
+
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .context-menu button:hover {
+      background: rgba(255,255,255,.055);
+      color: var(--text);
+    }
+
+    .context-menu button.danger:hover {
+      color: var(--danger);
+      background: rgba(255,107,107,.08);
+    }
+
+    /* =========================================
+       MODAL
+    ========================================= */
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 400;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      background: rgba(0,0,0,.68);
+
+      backdrop-filter: blur(9px);
+    }
+
+    .modal-backdrop.show {
+      display: flex;
+    }
+
+    .modal {
+      width: min(460px, 100%);
+
+      background:
+        linear-gradient(
+          180deg,
+          #151a20,
+          #0e1217
+        );
+
+      border: 1px solid var(--border-strong);
+      border-radius: 18px;
+
+      box-shadow:
+        0 30px 100px rgba(0,0,0,.55);
+
+      overflow: hidden;
+    }
+
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 18px 20px;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-head h3 {
+      font-size: 15px;
+    }
+
+    .close-modal {
+      width: 32px;
+      height: 32px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--border);
+      border-radius: 9px;
+
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+
+    .modal-body label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+
+    .modal-body input {
+      width: 100%;
+      height: 45px;
+
+      padding: 0 13px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+
+      outline: none;
+    }
+
+    .modal-body input:focus {
+      border-color: var(--accent-border);
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+
+      padding: 16px 20px;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .modal-btn {
+      padding: 10px 15px;
+
+      border-radius: 9px;
+
+      border: 1px solid var(--border);
+
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .modal-btn.primary {
+      background: var(--accent);
+      border-color: transparent;
+      color: #090a0c;
+    }
+
+    /* =========================================
+       TOAST
+    ========================================= */
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 25px;
+
+      z-index: 999;
+
+      transform:
+        translate(-50%, 20px);
+
+      opacity: 0;
+      pointer-events: none;
+
+      padding: 11px 16px;
+
+      border-radius: 10px;
+
+      background: #171c22;
+      border: 1px solid var(--border-strong);
+
+      color: var(--text);
+
+      font-size: 12px;
+      font-weight: 700;
+
+      box-shadow:
+        0 15px 40px rgba(0,0,0,.4);
+
+      transition: .25s ease;
+    }
+
+    .toast.show {
+      transform: translate(-50%, 0);
+      opacity: 1;
+    }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1050px) {
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .brand,
+      .top-actions {
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .topbar {
+        padding: 0 17px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .page {
+        width: min(100% - 28px, 1380px);
+        padding-top: 35px;
+      }
+
+      .page-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .toolbar {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .search-box {
+        max-width: none;
+      }
+
+      .filters {
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .filter-btn {
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      h1 {
+        letter-spacing: -1.7px;
+      }
+
+      .top-actions {
+        gap: 5px;
+      }
+
+      .brand-sub {
+        display: none;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .brand-name {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================
+       TOPBAR
+  ========================================= -->
+
+  <header class="topbar">
+
+    <a href="index.html" class="brand">
+      <div class="brand-mark">SNK</div>
+
+      <div class="brand-copy">
+        <div class="brand-name">SNK Ad Studio</div>
+        <div class="brand-sub">Creative Workspace</div>
+      </div>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="editor.html">Editor</a>
+      <a href="templates.html">Templates</a>
+      <a href="projects.html" class="active">Projects</a>
+    </nav>
+
+    <div class="top-actions">
+      <button
+        class="icon-button"
+        id="refreshBtn"
+        title="Refresh projects"
+        aria-label="Refresh projects"
+      >
+        ↻
+      </button>
+
+      <button
+        class="icon-button"
+        id="themeBtn"
+        title="Theme"
+        aria-label="Theme"
+      >
+        ◐
+      </button>
+    </div>
+
+  </header>
+
+
+  <!-- =========================================
+       MAIN
+  ========================================= -->
+
+  <main class="page">
+
+    <section class="page-head">
+
+      <div>
+        <div class="eyebrow">
+          <span class="eyebrow-dot"></span>
+          Workspace
+        </div>
+
+        <h1>Your Projects</h1>
+
+        <p class="page-description">
+          Everything you create in SNK Ad Studio lives here.
+          Open an existing ad, duplicate an idea, rename a project,
+          or continue editing where you left off.
+        </p>
+      </div>
+
+      <button
+        class="new-project-btn"
+        id="newProjectBtn"
+      >
+        <span>＋</span>
+        New Project
+      </button>
+
+    </section>
+
+
+    <!-- =========================================
+         STATS
+    ========================================= -->
+
+    <section class="stats">
+
+      <div class="stat">
+        <div class="stat-label">Total Projects</div>
+        <div class="stat-value" id="totalProjects">0</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-label">Recently Updated</div>
+        <div class="stat-value" id="recentProjects">0</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-label">9:16 Ads</div>
+        <div class="stat-value" id="verticalProjects">0</div>
+      </div>
+
+      <div class="stat">
+        <div class="stat-label">Templates Used</div>
+        <div class="stat-value" id="templateProjects">0</div>
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         TOOLBAR
+    ========================================= -->
+
+    <section class="toolbar">
+
+      <div class="search-box">
+        <span class="search-icon">⌕</span>
+
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Search projects..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="filters">
+
+        <button
+          class="filter-btn active"
+          data-filter="all"
+        >
+          All
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="recent"
+        >
+          Recent
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="vertical"
+        >
+          9:16
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="square"
+        >
+          1:1
+        </button>
+
+        <button
+          class="filter-btn"
+          data-filter="landscape"
+        >
+          16:9
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PROJECT GRID
+    ========================================= -->
+
+    <section
+      class="project-grid"
+      id="projectGrid"
+    ></section>
+
+
+    <!-- =========================================
+         EMPTY STATE
+    ========================================= -->
+
+    <section
+      class="empty-state"
+      id="emptyState"
+    >
+
+      <div class="empty-icon">✦</div>
+
+      <h2>No projects yet</h2>
+
+      <p>
+        Your creative workspace is empty.
+        Start your first ad and build something with SNK Ad Studio.
+      </p>
+
+      <button
+        class="empty-btn"
+        id="emptyNewBtn"
+      >
+        Create First Project
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       CONTEXT MENU
+  ========================================= -->
+
+  <div
+    class="context-menu"
+    id="contextMenu"
+  >
+
+    <button id="contextOpen">
+      Open in Editor
+    </button>
+
+    <button id="contextRename">
+      Rename
+    </button>
+
+    <button id="contextDuplicate">
+      Duplicate
+    </button>
+
+    <button
+      id="contextDelete"
+      class="danger"
+    >
+      Delete
+    </button>
+
+  </div>
+
+
+  <!-- =========================================
+       RENAME MODAL
+  ========================================= -->
+
+  <div
+    class="modal-backdrop"
+    id="renameModal"
+  >
+
+    <div class="modal">
+
+      <div class="modal-head">
+
+        <h3>Rename Project</h3>
+
+        <button
+          class="close-modal"
+          id="closeRename"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <label for="renameInput">
+          Project name
+        </label>
+
+        <input
+          id="renameInput"
+          type="text"
+          maxlength="80"
+          placeholder="Enter project name"
+        >
+
+      </div>
+
+      <div class="modal-footer">
+
+        <button
+          class="modal-btn"
+          id="cancelRename"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="modal-btn primary"
+          id="saveRename"
+        >
+          Save Name
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       TOAST
+  ========================================= -->
+
+  <div
+    class="toast"
+    id="toast"
+  ></div>
+
+
+  <script>
+    (() => {
+
+      "use strict";
+
+      /* =========================================
+         CONFIG
+      ========================================= */
+
+      const STORAGE_KEY = "snk-ad-studio-projects";
+
+      let projects = [];
+      let currentFilter = "all";
+      let currentProjectId = null;
+
+
+      /* =========================================
+         DOM
+      ========================================= */
+
+      const grid =
+        document.getElementById("projectGrid");
+
+      const emptyState =
+        document.getElementById("emptyState");
+
+      const searchInput =
+        document.getElementById("searchInput");
+
+      const totalProjects =
+        document.getElementById("totalProjects");
+
+      const recentProjects =
+        document.getElementById("recentProjects");
+
+      const verticalProjects =
+        document.getElementById("verticalProjects");
+
+      const templateProjects =
+        document.getElementById("templateProjects");
+
+      const contextMenu =
+        document.getElementById("contextMenu");
+
+      const renameModal =
+        document.getElementById("renameModal");
+
+      const renameInput =
+        document.getElementById("renameInput");
+
+      const toast =
+        document.getElementById("toast");
+
+
+      /* =========================================
+         HELPERS
+      ========================================= */
+
+      function showToast(message) {
+
+        toast.textContent = message;
+
+        toast.classList.add("show");
+
+        clearTimeout(showToast.timer);
+
+        showToast.timer =
+          setTimeout(() => {
+            toast.classList.remove("show");
+          }, 2200);
+      }
+
+
+      function escapeHTML(value) {
+
+        return String(value ?? "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+
+      function loadProjects() {
+
+        try {
+
+          const saved =
+            localStorage.getItem(STORAGE_KEY);
+
+          if (!saved) {
+            projects = [];
+            return;
+          }
+
+          const parsed =
+            JSON.parse(saved);
+
+          projects =
+            Array.isArray(parsed)
+              ? parsed
+              : [];
+
+        } catch (error) {
+
+          console.warn(
+            "Could not load SNK projects:",
+            error
+          );
+
+          projects = [];
+        }
+      }
+
+
+      function saveProjects() {
+
+        try {
+
+          localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify(projects)
+          );
+
+        } catch (error) {
+
+          console.warn(
+            "Could not save SNK projects:",
+            error
+          );
+
+          showToast(
+            "Could not save project."
+          );
+        }
+      }
+
+
+      function getProjectName(project) {
+
+        return (
+          project.name ||
+          project.title ||
+          "Untitled Project"
+        );
+      }
+
+
+      function getProjectFormat(project) {
+
+        const format =
+          project.format ||
+          project.aspectRatio ||
+          project.size ||
+          "9:16";
+
+        const value =
+          String(format)
+            .toLowerCase()
+            .replace(/\s/g, "");
+
+        if (
+          value.includes("16:9") ||
+          value.includes("landscape") ||
+          value.includes("1920x1080")
+        ) {
+          return "16:9";
+        }
+
+        if (
+          value.includes("1:1") ||
+          value.includes("square") ||
+          value.includes("1080x1080")
+        ) {
+          return "1:1";
+        }
+
+        return "9:16";
+      }
+
+
+      function getFormatClass(format) {
+
+        if (format === "16:9") {
+          return "preview-16x9";
+        }
+
+        if (format === "1:1") {
+          return "preview-1x1";
+        }
+
+        return "preview-9x16";
+      }
+
+
+      function getTemplateName(project) {
+
+        if (typeof project.template === "string") {
+          return project.template;
+        }
+
+        if (
+          project.template &&
+          typeof project.template === "object"
+        ) {
+          return (
+            project.template.name ||
+            project.template.id ||
+            "Template"
+          );
+        }
+
+        if (project.templateName) {
+          return project.templateName;
+        }
+
+        return null;
+      }
+
+
+      function getProjectDate(project) {
+
+        return (
+          project.updatedAt ||
+          project.modifiedAt ||
+          project.createdAt ||
+          Date.now()
+        );
+      }
+
+
+      function getDateText(project) {
+
+        const date =
+          new Date(getProjectDate(project));
+
+        if (Number.isNaN(date.getTime())) {
+          return "Recently updated";
+        }
+
+        return (
+          "Updated " +
+          date.toLocaleDateString(
+            undefined,
+            {
+              month: "short",
+              day: "numeric",
+              year: "numeric"
+            }
+          )
+        );
+      }
+
+
+      function getDuration(project) {
+
+        const duration =
+          project.duration ||
+          project.length ||
+          project.totalDuration;
+
+        if (!duration) {
+          return "Draft";
+        }
+
+        if (
+          typeof duration === "number"
+        ) {
+
+          const seconds =
+            Math.round(duration);
+
+          const min =
+            Math.floor(seconds / 60);
+
+          const sec =
+            seconds % 60;
+
+          return (
+            min +
+            ":" +
+            String(sec).padStart(2, "0")
+          );
+        }
+
+        return String(duration);
+      }
+
+
+      function getProjectId(project) {
+
+        return (
+          project.id ||
+          project.projectId ||
+          project._id
+        );
+      }
+
+
+      function createId() {
+
+        return (
+          "project_" +
+          Date.now() +
+          "_" +
+          Math.random()
+            .toString(36)
+            .slice(2, 8)
+        );
+      }
+
+
+      /* =========================================
+         FILTER
+      ========================================= */
+
+      function isRecent(project) {
+
+        const time =
+          new Date(
+            getProjectDate(project)
+          ).getTime();
+
+        if (Number.isNaN(time)) {
+          return false;
+        }
+
+        const sevenDays =
+          7 * 24 * 60 * 60 * 1000;
+
+        return (
+          Date.now() - time <=
+          sevenDays
+        );
+      }
+
+
+      function matchesFilter(project) {
+
+        const format =
+          getProjectFormat(project);
+
+        if (currentFilter === "recent") {
+          return isRecent(project);
+        }
+
+        if (currentFilter === "vertical") {
+          return format === "9:16";
+        }
+
+        if (currentFilter === "square") {
+          return format === "1:1";
+        }
+
+        if (currentFilter === "landscape") {
+          return format === "16:9";
+        }
+
+        return true;
+      }
+
+
+      function getVisibleProjects() {
+
+        const query =
+          searchInput.value
+            .trim()
+            .toLowerCase();
+
+        return projects
+          .filter(project => {
+
+            if (!matchesFilter(project)) {
+              return false;
+            }
+
+            if (!query) {
+              return true;
+            }
+
+            const name =
+              getProjectName(project)
+                .toLowerCase();
+
+            const template =
+              String(
+                getTemplateName(project) || ""
+              ).toLowerCase();
+
+            return (
+              name.includes(query) ||
+              template.includes(query)
+            );
+          })
+          .sort((a, b) => {
+
+            return (
+              new Date(
+                getProjectDate(b)
+              ).getTime() -
+              new Date(
+                getProjectDate(a)
+              ).getTime()
+            );
+
+          });
+      }
+
+
+      /* =========================================
+         STATS
+      ========================================= */
+
+      function updateStats() {
+
+        totalProjects.textContent =
+          projects.length;
+
+        recentProjects.textContent =
+          projects.filter(isRecent).length;
+
+        verticalProjects.textContent =
+          projects.filter(
+            project =>
+              getProjectFormat(project) === "9:16"
+          ).length;
+
+        templateProjects.textContent =
+          projects.filter(
+            project =>
+              Boolean(getTemplateName(project))
+          ).length;
+      }
+
+
+      /* =========================================
+         PROJECT CARD
+      ========================================= */
+
+      function renderProject(project) {
+
+        const id =
+          getProjectId(project);
+
+        const name =
+          getProjectName(project);
+
+        const format =
+          getProjectFormat(project);
+
+        const template =
+          getTemplateName(project);
+
+        const duration =
+          getDuration(project);
+
+        const previewText =
+          project.previewText ||
+          project.headline ||
+          project.description ||
+          name;
+
+        const card =
+          document.createElement("article");
+
+        card.className =
+          "project-card";
+
+        card.dataset.id =
+          id;
+
+        card.innerHTML = `
+
+          <div class="project-preview">
+
+            <div class="preview-badge">
+              ${escapeHTML(format)}
+            </div>
+
+            <div class="
+              preview-frame
+              ${getFormatClass(format)}
+            ">
+
+              <div class="preview-content">
+                ${escapeHTML(previewText)}
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="project-body">
+
+            <div class="project-title-row">
+
+              <div class="project-title">
+                ${escapeHTML(name)}
+              </div>
+
+              <button
+                class="more-btn"
+                data-action="menu"
+                data-id="${escapeHTML(id)}"
+                title="More options"
+              >
+                ⋯
+              </button>
+
+            </div>
+
+
+            <div class="project-meta">
+
+              <span class="meta-pill">
+                ${escapeHTML(format)}
+              </span>
+
+              <span class="meta-pill">
+                ${escapeHTML(duration)}
+              </span>
+
+              ${
+                template
+                  ? `
+                    <span class="meta-pill">
+                      ${escapeHTML(template)}
+                    </span>
+                  `
+                  : ""
+              }
+
+            </div>
+
+
+            <div class="project-date">
+              ${escapeHTML(getDateText(project))}
+            </div>
+
+          </div>
+
+
+          <div class="project-actions">
+
+            <button
+              class="action-btn primary"
+              data-action="open"
+              data-id="${escapeHTML(id)}"
+            >
+              Open Editor
+            </button>
+
+            <button
+              class="action-btn"
+              data-action="duplicate"
+              data-id="${escapeHTML(id)}"
+            >
+              Duplicate
+            </button>
+
+          </div>
+
+        `;
+
+        return card;
+      }
+
+
+      /* =========================================
+         RENDER
+      ========================================= */
+
+      function render() {
+
+        const visible =
+          getVisibleProjects();
+
+        grid.innerHTML = "";
+
+        if (
+          projects.length === 0 ||
+          visible.length === 0
+        ) {
+
+          grid.style.display =
+            "none";
+
+          emptyState.style.display =
+            "block";
+
+          if (
+            projects.length > 0 &&
+            visible.length === 0
+          ) {
+
+            emptyState.querySelector("h2")
+              .textContent =
+              "No matching projects";
+
+            emptyState.querySelector("p")
+              .textContent =
+              "Try another search term or change the project filter.";
+
+            emptyState.querySelector("button")
+              .style.display =
+              "none";
+
+          } else {
+
+            emptyState.querySelector("h2")
+              .textContent =
+              "No projects yet";
+
+            emptyState.querySelector("p")
+              .textContent =
+              "Your creative workspace is empty. Start your first ad and build something with SNK Ad Studio.";
+
+            emptyState.querySelector("button")
+              .style.display =
+              "inline-block";
+          }
+
+          return;
+        }
+
+        grid.style.display =
+          "grid";
+
+        emptyState.style.display =
+          "none";
+
+        visible.forEach(project => {
+
+          grid.appendChild(
+            renderProject(project)
+          );
+
+        });
+      }
+
+
+      /* =========================================
+         OPEN EDITOR
+      ========================================= */
+
+      function openProject(id) {
+
+        const project =
+          projects.find(
+            item =>
+              String(
+                getProjectId(item)
+              ) === String(id)
+          );
+
+        if (!project) {
+          showToast(
+            "Project not found."
+          );
+          return;
+        }
+
+        try {
+
+          localStorage.setItem(
+            "snk-ad-studio-current-project",
+            JSON.stringify(project)
+          );
+
+        } catch (error) {
+          console.warn(error);
+        }
+
+        window.location.href =
+          "editor.html?project=" +
+          encodeURIComponent(id);
+      }
+
+
+      /* =========================================
+         NEW PROJECT
+      ========================================= */
+
+      function newProject() {
+
+        const project = {
+
+          id: createId(),
+
+          name: "Untitled Ad",
+
+          title: "Untitled Ad",
+
+          format: "9:16",
+
+          duration: 15,
+
+          createdAt:
+            new Date().toISOString(),
+
+          updatedAt:
+            new Date().toISOString(),
+
+          scenes: [],
+
+          layers: [],
+
+          media: [],
+
+          template: null
+
+        };
+
+        projects.unshift(project);
+
+        saveProjects();
+
+        updateStats();
+
+        openProject(project.id);
+      }
+
+
+      /* =========================================
+         DUPLICATE
+      ========================================= */
+
+      function duplicateProject(id) {
+
+        const original =
+          projects.find(
+            item =>
+              String(
+                getProjectId(item)
+              ) === String(id)
+          );
+
+        if (!original) {
+          return;
+        }
+
+        let copy;
+
+        try {
+
+          copy =
+            typeof structuredClone === "function"
+              ? structuredClone(original)
+              : JSON.parse(
+                  JSON.stringify(original)
+                );
+
+        } catch (error) {
+
+          copy =
+            JSON.parse(
+              JSON.stringify(original)
+            );
+        }
+
+        const newId =
+          createId();
+
+        copy.id =
+          newId;
+
+        copy.projectId =
+          undefined;
+
+        copy.name =
+          getProjectName(original) +
+          " Copy";
+
+        copy.title =
+          copy.name;
+
+        copy.createdAt =
+          new Date().toISOString();
+
+        copy.updatedAt =
+          new Date().toISOString();
+
+        projects.unshift(copy);
+
+        saveProjects();
+
+        updateStats();
+
+        render();
+
+        showToast(
+          "Project duplicated."
+        );
+      }
+
+
+      /* =========================================
+         DELETE
+      ========================================= */
+
+      function deleteProject(id) {
+
+        const project =
+          projects.find(
+            item =>
+              String(
+                getProjectId(item)
+              ) === String(id)
+          );
+
+        if (!project) {
+          return;
+        }
+
+        const confirmed =
+          window.confirm(
+            `Delete "${getProjectName(project)}"?\n\nThis action cannot be undone.`
+          );
+
+        if (!confirmed) {
+          return;
+        }
+
+        projects =
+          projects.filter(
+            item =>
+              String(
+                getProjectId(item)
+              ) !== String(id)
+          );
+
+        saveProjects();
+
+        updateStats();
+
+        render();
+
+        closeContextMenu();
+
+        showToast(
+          "Project deleted."
+        );
+      }
+
+
+      /* =========================================
+         RENAME
+      ========================================= */
+
+      function openRename(id) {
+
+        const project =
+          projects.find(
+            item =>
+              String(
+                getProjectId(item)
+              ) === String(id)
+          );
+
+        if (!project) {
+          return;
+        }
+
+        currentProjectId =
+          id;
+
+        renameInput.value =
+          getProjectName(project);
+
+        renameModal.classList.add(
+          "show"
+        );
+
+        setTimeout(() => {
+
+          renameInput.focus();
+
+          renameInput.select();
+
+        }, 80);
+
+        closeContextMenu();
+      }
+
+
+      function closeRename() {
+
+        renameModal.classList.remove(
+          "show"
+        );
+
+        currentProjectId =
+          null;
+      }
+
+
+      function saveRename() {
+
+        if (!currentProjectId) {
+          return;
+        }
+
+        const newName =
+          renameInput.value.trim();
+
+        if (!newName) {
+
+          showToast(
+            "Enter a project name."
+          );
+
+          renameInput.focus();
+
+          return;
+        }
+
+        const project =
+          projects.find(
+            item =>
+              String(
+                getProjectId(item)
+              ) === String(currentProjectId)
+          );
+
+        if (!project) {
+          return;
+        }
+
+        project.name =
+          newName;
+
+        project.title =
+          newName;
+
+        project.updatedAt =
+          new Date().toISOString();
+
+        saveProjects();
+
+        updateStats();
+
+        render();
+
+        closeRename();
+
+        showToast(
+          "Project renamed."
+        );
+      }
+
+
+      /* =========================================
+         CONTEXT MENU
+      ========================================= */
+
+      function openContextMenu(
+        event,
+        id
+      ) {
+
+        event.preventDefault();
+
+        currentProjectId =
+          id;
+
+        contextMenu.style.display =
+          "block";
+
+        const menuWidth =
+          175;
+
+        const menuHeight =
+          180;
+
+        let left =
+          event.clientX;
+
+        let top =
+          event.clientY;
+
+        if (
+          left + menuWidth >
+          window.innerWidth
+        ) {
+
+          left =
+            window.innerWidth -
+            menuWidth -
+            12;
+        }
+
+        if (
+          top + menuHeight >
+          window.innerHeight
+        ) {
+
+          top =
+            window.innerHeight -
+            menuHeight -
+            12;
+        }
+
+        contextMenu.style.left =
+          left + "px";
+
+        contextMenu.style.top =
+          top + "px";
+      }
+
+
+      function closeContextMenu() {
+
+        contextMenu.style.display =
+          "none";
+      }
+
+
+      /* =========================================
+         EVENT DELEGATION
+      ========================================= */
+
+      grid.addEventListener(
+        "click",
+        event => {
+
+          const button =
+            event.target.closest(
+              "[data-action]"
+            );
+
+          if (!button) {
+            return;
+          }
+
+          const action =
+            button.dataset.action;
+
+          const id =
+            button.dataset.id;
+
+          if (action === "open") {
+
+            openProject(id);
+
+          }
+
+          if (action === "duplicate") {
+
+            duplicateProject(id);
+
+          }
+
+          if (action === "menu") {
+
+            openContextMenu(
+              event,
+              id
+            );
+
+          }
+
+        }
+      );
+
+
+      /* =========================================
+         FILTER BUTTONS
+      ========================================= */
+
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach(button => {
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              document
+                .querySelectorAll(
+                  ".filter-btn"
+                )
+                .forEach(btn => {
+                  btn.classList.remove(
+                    "active"
+                  );
+                });
+
+              button.classList.add(
+                "active"
+              );
+
+              currentFilter =
+                button.dataset.filter;
+
+              render();
+
+            }
+          );
+
+        });
+
+
+      /* =========================================
+         SEARCH
+      ========================================= */
+
+      searchInput.addEventListener(
+        "input",
+        render
+      );
+
+
+      /* =========================================
+         CONTEXT ACTIONS
+      ========================================= */
+
+      document
+        .getElementById("contextOpen")
+        .addEventListener(
+          "click",
+          () => {
+
+            const id =
+              currentProjectId;
+
+            closeContextMenu();
+
+            openProject(id);
+
+          }
+        );
+
+
+      document
+        .getElementById("contextRename")
+        .addEventListener(
+          "click",
+          () => {
+
+            openRename(
+              currentProjectId
+            );
+
+          }
+        );
+
+
+      document
+        .getElementById("contextDuplicate")
+        .addEventListener(
+          "click",
+          () => {
+
+            const id =
+              currentProjectId;
+
+            closeContextMenu();
+
+            duplicateProject(id);
+
+          }
+        );
+
+
+      document
+        .getElementById("contextDelete")
+        .addEventListener(
+          "click",
+          () => {
+
+            const id =
+              currentProjectId;
+
+            deleteProject(id);
+
+          }
+        );
+
+
+      document.addEventListener(
+        "click",
+        event => {
+
+          if (
+            !event.target.closest(
+              ".context-menu"
+            ) &&
+            !event.target.closest(
+              "[data-action='menu']"
+            )
+          ) {
+
+            closeContextMenu();
+
+          }
+
+        }
+      );
+
+
+      /* =========================================
+         RENAME MODAL EVENTS
+      ========================================= */
+
+      document
+        .getElementById("closeRename")
+        .addEventListener(
+          "click",
+          closeRename
+        );
+
+
+      document
+        .getElementById("cancelRename")
+        .addEventListener(
+          "click",
+          closeRename
+        );
+
+
+      document
+        .getElementById("saveRename")
+        .addEventListener(
+          "click",
+          saveRename
+        );
+
+
+      renameInput.addEventListener(
+        "keydown",
+        event => {
+
+          if (
+            event.key === "Enter"
+          ) {
+
+            saveRename();
+
+          }
+
+          if (
+            event.key === "Escape"
+          ) {
+
+            closeRename();
+
+          }
+
+        }
+      );
+
+
+      renameModal.addEventListener(
+        "click",
+        event => {
+
+          if (
+            event.target ===
+            renameModal
+          ) {
+
+            closeRename();
+
+          }
+
+        }
+      );
+
+
+      /* =========================================
+         NEW PROJECT BUTTONS
+      ========================================= */
+
+      document
+        .getElementById("newProjectBtn")
+        .addEventListener(
+          "click",
+          newProject
+        );
+
+
+      document
+        .getElementById("emptyNewBtn")
+        .addEventListener(
+          "click",
+          newProject
+        );
+
+
+      /* =========================================
+         REFRESH
+      ========================================= */
+
+      document
+        .getElementById("refreshBtn")
+        .addEventListener(
+          "click",
+          () => {
+
+            loadProjects();
+
+            updateStats();
+
+            render();
+
+            showToast(
+              "Projects refreshed."
+            );
+
+          }
+        );
+
+
+      /* =========================================
+         THEME BUTTON
+      ========================================= */
+
+      document
+        .getElementById("themeBtn")
+        .addEventListener(
+          "click",
+          () => {
+
+            showToast(
+              "SNK Ad Studio is using the premium dark workspace."
+            );
+
+          }
+        );
+
+
+      /* =========================================
+         KEYBOARD
+      ========================================= */
+
+      document.addEventListener(
+        "keydown",
+        event => {
+
+          if (
+            event.key === "Escape"
+          ) {
+
+            closeContextMenu();
+
+            closeRename();
+
+          }
+
+          if (
+            event.ctrlKey &&
+            event.key.toLowerCase() === "k"
+          ) {
+
+            event.preventDefault();
+
+            searchInput.focus();
+
+          }
+
+          if (
+            event.ctrlKey &&
+            event.key.toLowerCase() === "n"
+          ) {
+
+            event.preventDefault();
+
+            newProject();
+
+          }
+
+        }
+      );
+
+
+      /* =========================================
+         INIT
+      ========================================= */
+
+      loadProjects();
+
+      updateStats();
+
+      render();
+
+    })();
+  </script>
+
+</body>
+</html>
