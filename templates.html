@@ -1,0 +1,3332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Templates — SNK Ad Studio</title>
+
+  <meta
+    name="description"
+    content="SNK Ad Studio template library — ready-made ad video templates for social media, institute promotions, product ads and presenter videos."
+  >
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* =========================================================
+       SNK AD STUDIO — TEMPLATE LIBRARY
+       ========================================================= */
+
+    :root {
+      --template-bg: #080a0d;
+      --template-panel: #101419;
+      --template-panel-2: #151a20;
+
+      --template-border: rgba(255,255,255,.08);
+
+      --template-text: #f4f7fa;
+      --template-muted: #89939f;
+
+      --template-accent: #d8a64b;
+      --template-green: #35c982;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      background:
+        radial-gradient(
+          circle at 75% 0%,
+          rgba(216,166,75,.08),
+          transparent 32%
+        ),
+        var(--template-bg);
+
+      color: var(--template-text);
+
+      font-family: "Inter", sans-serif;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================================
+       TOP NAV
+       ========================================================= */
+
+    .templates-topbar {
+      height: 70px;
+
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 28px;
+
+      background: rgba(8,10,13,.88);
+
+      border-bottom:
+        1px solid var(--template-border);
+
+      backdrop-filter: blur(18px);
+    }
+
+    .template-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .template-brand img {
+      width: 35px;
+      height: 35px;
+      object-fit: contain;
+    }
+
+    .template-brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .template-brand-name {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+
+    .template-brand-subtitle {
+      font-size: 9px;
+      color: var(--template-muted);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+    .template-nav {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .template-nav a {
+      padding: 9px 12px;
+      border-radius: 7px;
+
+      color: #9da6b1;
+
+      font-size: 11px;
+      font-weight: 600;
+
+      transition: .2s ease;
+    }
+
+    .template-nav a:hover,
+    .template-nav a.active {
+      background: rgba(255,255,255,.05);
+      color: white;
+    }
+
+    .template-nav a.active {
+      color: var(--template-accent);
+    }
+
+    .template-top-actions {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .template-btn {
+      min-height: 36px;
+
+      border:
+        1px solid var(--template-border);
+
+      border-radius: 7px;
+
+      background: rgba(255,255,255,.035);
+
+      color: white;
+
+      padding: 0 12px;
+
+      font-size: 10px;
+      font-weight: 600;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+
+      transition: .2s ease;
+    }
+
+    .template-btn:hover {
+      background: rgba(255,255,255,.07);
+    }
+
+    .template-btn.primary {
+      background: var(--template-accent);
+      border-color: var(--template-accent);
+      color: #111;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .templates-container {
+      width: min(1380px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    .templates-hero {
+      padding: 78px 0 45px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      padding: 7px 11px;
+
+      border:
+        1px solid rgba(216,166,75,.2);
+
+      border-radius: 999px;
+
+      background:
+        rgba(216,166,75,.06);
+
+      color: var(--template-accent);
+
+      font-size: 9px;
+      font-weight: 700;
+
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: var(--template-accent);
+
+      box-shadow:
+        0 0 12px rgba(216,166,75,.6);
+    }
+
+    .templates-hero h1 {
+      max-width: 780px;
+
+      margin: 20px auto 15px;
+
+      font-size:
+        clamp(38px, 6vw, 68px);
+
+      line-height: .98;
+
+      letter-spacing: -.06em;
+    }
+
+    .templates-hero h1 span {
+      color: var(--template-accent);
+    }
+
+    .templates-hero p {
+      max-width: 620px;
+
+      margin: auto;
+
+      color: var(--template-muted);
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       SEARCH + FILTER
+       ========================================================= */
+
+    .template-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      margin-bottom: 28px;
+    }
+
+    .template-search {
+      position: relative;
+
+      width: 300px;
+    }
+
+    .template-search span {
+      position: absolute;
+
+      left: 13px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: #68727e;
+
+      font-size: 13px;
+    }
+
+    .template-search input {
+      width: 100%;
+      height: 40px;
+
+      padding:
+        0 12px 0 36px;
+
+      border:
+        1px solid var(--template-border);
+
+      border-radius: 8px;
+
+      background:
+        rgba(255,255,255,.035);
+
+      color: white;
+
+      outline: none;
+
+      font-size: 11px;
+    }
+
+    .template-search input:focus {
+      border-color:
+        rgba(216,166,75,.45);
+    }
+
+    .filter-list {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .filter-btn {
+      height: 36px;
+
+      padding: 0 12px;
+
+      border:
+        1px solid var(--template-border);
+
+      border-radius: 7px;
+
+      background:
+        rgba(255,255,255,.025);
+
+      color: #8f99a5;
+
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .filter-btn:hover {
+      color: white;
+      background:
+        rgba(255,255,255,.05);
+    }
+
+    .filter-btn.active {
+      color: #111;
+
+      background:
+        var(--template-accent);
+
+      border-color:
+        var(--template-accent);
+    }
+
+    /* =========================================================
+       FEATURED TEMPLATE
+       ========================================================= */
+
+    .featured-template {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+
+      min-height: 430px;
+
+      margin-bottom: 55px;
+
+      overflow: hidden;
+
+      border:
+        1px solid var(--template-border);
+
+      border-radius: 16px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #141920,
+          #0c0f13
+        );
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.25);
+    }
+
+    .featured-preview {
+      position: relative;
+
+      min-height: 430px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(216,166,75,.15),
+          transparent 40%
+        ),
+        #0a0c10;
+    }
+
+    .featured-preview::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          120deg,
+          transparent 30%,
+          rgba(255,255,255,.025) 50%,
+          transparent 70%
+        );
+
+      transform:
+        translateX(-100%);
+
+      animation:
+        previewShine 6s infinite;
+    }
+
+    @keyframes previewShine {
+
+      0% {
+        transform: translateX(-100%);
+      }
+
+      35%,
+      100% {
+        transform: translateX(100%);
+      }
+
+    }
+
+    .featured-phone {
+      position: relative;
+
+      width: 230px;
+      aspect-ratio: 9 / 16;
+
+      border:
+        5px solid #20262d;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          150deg,
+          #1c2026,
+          #07090b
+        );
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.65);
+
+      overflow: hidden;
+    }
+
+    .featured-phone-content {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+
+      padding: 25px;
+    }
+
+    .featured-small {
+      color: var(--template-accent);
+
+      font-size: 8px;
+      font-weight: 800;
+
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      margin-bottom: 10px;
+    }
+
+    .featured-phone-content h3 {
+      margin: 0;
+
+      font-size: 27px;
+      line-height: .98;
+
+      letter-spacing: -.06em;
+    }
+
+    .featured-phone-content h3 span {
+      color: var(--template-accent);
+    }
+
+    .featured-line {
+      width: 50px;
+      height: 2px;
+
+      margin-top: 16px;
+
+      background:
+        var(--template-accent);
+    }
+
+    .featured-content {
+      padding: 55px 50px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-content .label {
+      color: var(--template-accent);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    .featured-content h2 {
+      margin: 13px 0;
+
+      font-size: 34px;
+
+      line-height: 1.05;
+
+      letter-spacing: -.05em;
+    }
+
+    .featured-content p {
+      color: var(--template-muted);
+
+      font-size: 12px;
+
+      line-height: 1.7;
+
+      max-width: 460px;
+    }
+
+    .featured-meta {
+      display: flex;
+      gap: 8px;
+
+      margin: 17px 0 25px;
+    }
+
+    .meta-tag {
+      padding: 6px 9px;
+
+      border:
+        1px solid var(--template-border);
+
+      border-radius: 6px;
+
+      color: #aeb6bf;
+
+      font-size: 9px;
+    }
+
+    /* =========================================================
+       TEMPLATE GRID
+       ========================================================= */
+
+    .section-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+
+      margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+
+      font-size: 24px;
+
+      letter-spacing: -.04em;
+    }
+
+    .section-heading p {
+      margin: 0;
+
+      color: var(--template-muted);
+
+      font-size: 11px;
+    }
+
+    .template-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      gap: 15px;
+
+      padding-bottom: 80px;
+    }
+
+    .template-card {
+      position: relative;
+
+      overflow: hidden;
+
+      border:
+        1px solid var(--template-border);
+
+      border-radius: 12px;
+
+      background:
+        var(--template-panel);
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+      cursor: pointer;
+    }
+
+    .template-card:hover {
+      transform: translateY(-4px);
+
+      border-color:
+        rgba(216,166,75,.3);
+
+      box-shadow:
+        0 20px 50px rgba(0,0,0,.3);
+    }
+
+    .template-preview {
+      position: relative;
+
+      aspect-ratio: 16 / 10;
+
+      overflow: hidden;
+
+      background: #151a20;
+    }
+
+    .template-preview.vertical {
+      aspect-ratio: 9 / 12;
+    }
+
+    .preview-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .preview-content {
+      position: absolute;
+      inset: 0;
+
+      display: flex;
+      flex-direction: column;
+
+      justify-content: center;
+
+      padding: 20px;
+    }
+
+    .preview-kicker {
+      font-size: 7px;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: .15em;
+
+      margin-bottom: 7px;
+
+      opacity: .75;
+    }
+
+    .preview-title {
+      font-size: 22px;
+
+      line-height: .98;
+
+      font-weight: 800;
+
+      letter-spacing: -.06em;
+    }
+
+    .preview-title.small {
+      font-size: 17px;
+    }
+
+    .preview-accent {
+      color: var(--template-accent);
+    }
+
+    .preview-button {
+      width: fit-content;
+
+      margin-top: 13px;
+
+      padding: 6px 9px;
+
+      border-radius: 4px;
+
+      background:
+        var(--template-accent);
+
+      color: #111;
+
+      font-size: 6px;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+    }
+
+    .preview-circle {
+      position: absolute;
+
+      width: 120px;
+      height: 120px;
+
+      right: -35px;
+      top: -35px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(216,166,75,.3);
+
+      background:
+        rgba(216,166,75,.08);
+    }
+
+    .preview-person {
+      position: absolute;
+
+      right: 20px;
+      bottom: 0;
+
+      width: 105px;
+      height: 145px;
+
+      border-radius:
+        55px 55px 0 0;
+
+      background:
+        linear-gradient(
+          160deg,
+          #2c343c,
+          #11151a
+        );
+
+      opacity: .75;
+    }
+
+    .preview-person::before {
+      content: "";
+
+      position: absolute;
+
+      width: 42px;
+      height: 42px;
+
+      border-radius: 50%;
+
+      top: -27px;
+      left: 31px;
+
+      background:
+        #333a42;
+    }
+
+    .preview-gradient {
+      background:
+        linear-gradient(
+          135deg,
+          #11151b,
+          #2b2110
+        );
+    }
+
+    .preview-dark {
+      background:
+        linear-gradient(
+          145deg,
+          #050607,
+          #171c22
+        );
+    }
+
+    .preview-green {
+      background:
+        linear-gradient(
+          145deg,
+          #0a1812,
+          #0b0d0e
+        );
+    }
+
+    .preview-purple {
+      background:
+        linear-gradient(
+          145deg,
+          #151020,
+          #090a0e
+        );
+    }
+
+    .preview-blue {
+      background:
+        linear-gradient(
+          145deg,
+          #0c1722,
+          #080a0d
+        );
+    }
+
+    .template-card-info {
+      padding: 13px 14px 15px;
+    }
+
+    .template-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      gap: 10px;
+    }
+
+    .template-card h3 {
+      margin: 0;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .template-card p {
+      margin: 5px 0 0;
+
+      color: var(--template-muted);
+
+      font-size: 9px;
+
+      line-height: 1.5;
+    }
+
+    .template-format {
+      flex-shrink: 0;
+
+      padding: 4px 6px;
+
+      border:
+        1px solid var(--template-border);
+
+      border-radius: 4px;
+
+      color: #88929d;
+
+      font-size: 7px;
+      font-weight: 700;
+    }
+
+    .template-card-footer {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      margin-top: 12px;
+    }
+
+    .template-category {
+      color: #66717d;
+
+      font-size: 8px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .08em;
+    }
+
+    .use-template {
+      border: 0;
+
+      padding: 7px 9px;
+
+      border-radius: 5px;
+
+      background:
+        rgba(216,166,75,.1);
+
+      color:
+        var(--template-accent);
+
+      font-size: 8px;
+
+      font-weight: 700;
+    }
+
+    .use-template:hover {
+      background:
+        var(--template-accent);
+
+      color: #111;
+    }
+
+    .template-card.hidden {
+      display: none;
+    }
+
+    /* =========================================================
+       EMPTY
+       ========================================================= */
+
+    .empty-state {
+      display: none;
+
+      text-align: center;
+
+      padding: 70px 20px;
+
+      color: var(--template-muted);
+    }
+
+    .empty-state.show {
+      display: block;
+    }
+
+    .empty-icon {
+      font-size: 35px;
+      opacity: .5;
+      margin-bottom: 12px;
+    }
+
+    .empty-state h3 {
+      margin: 0 0 7px;
+
+      color: white;
+
+      font-size: 16px;
+    }
+
+    .empty-state p {
+      margin: 0;
+
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       CTA
+       ========================================================= */
+
+    .templates-cta {
+      margin-bottom: 70px;
+
+      padding: 45px;
+
+      border:
+        1px solid var(--template-border);
+
+      border-radius: 14px;
+
+      background:
+        linear-gradient(
+          120deg,
+          rgba(216,166,75,.09),
+          rgba(255,255,255,.02)
+        );
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 25px;
+    }
+
+    .templates-cta h2 {
+      margin: 0 0 7px;
+
+      font-size: 24px;
+
+      letter-spacing: -.04em;
+    }
+
+    .templates-cta p {
+      margin: 0;
+
+      color: var(--template-muted);
+
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    .templates-footer {
+      padding: 25px 0 35px;
+
+      border-top:
+        1px solid var(--template-border);
+
+      color: #626c77;
+
+      font-size: 9px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+    }
+
+    /* =========================================================
+       MODAL
+       ========================================================= */
+
+    .template-modal {
+      position: fixed;
+      inset: 0;
+
+      z-index: 500;
+
+      display: none;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(0,0,0,.72);
+
+      backdrop-filter:
+        blur(10px);
+    }
+
+    .template-modal.open {
+      display: flex;
+    }
+
+    .modal-box {
+      width: min(620px, 100%);
+
+      max-height: 90vh;
+
+      overflow: auto;
+
+      border:
+        1px solid var(--template-border);
+
+      border-radius: 14px;
+
+      background:
+        #11151a;
+
+      box-shadow:
+        0 35px 100px rgba(0,0,0,.65);
+    }
+
+    .modal-head {
+      height: 58px;
+
+      padding: 0 18px;
+
+      border-bottom:
+        1px solid var(--template-border);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+    }
+
+    .modal-head strong {
+      font-size: 13px;
+    }
+
+    .modal-close {
+      width: 31px;
+      height: 31px;
+
+      border:
+        1px solid var(--template-border);
+
+      border-radius: 6px;
+
+      background:
+        rgba(255,255,255,.035);
+
+      color: white;
+
+      font-size: 16px;
+    }
+
+    .modal-content {
+      padding: 18px;
+    }
+
+    .modal-preview {
+      width: 100%;
+
+      aspect-ratio: 16 / 9;
+
+      border-radius: 9px;
+
+      overflow: hidden;
+
+      margin-bottom: 18px;
+    }
+
+    .modal-content h2 {
+      margin: 0 0 7px;
+
+      font-size: 20px;
+    }
+
+    .modal-content p {
+      color: var(--template-muted);
+
+      font-size: 11px;
+
+      line-height: 1.7;
+
+      margin-bottom: 18px;
+    }
+
+    .modal-actions {
+      display: flex;
+
+      justify-content: flex-end;
+
+      gap: 8px;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1100px) {
+
+      .template-grid {
+        grid-template-columns:
+          repeat(3, minmax(0, 1fr));
+      }
+
+      .featured-template {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media (max-width: 850px) {
+
+      .template-nav {
+        display: none;
+      }
+
+      .templates-container {
+        width:
+          min(100% - 30px, 700px);
+      }
+
+      .template-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .template-search {
+        width: 100%;
+      }
+
+      .filter-list {
+        justify-content: flex-start;
+      }
+
+      .template-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .featured-template {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-preview {
+        min-height: 350px;
+      }
+
+      .featured-content {
+        padding: 35px;
+      }
+
+      .templates-cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    }
+
+    @media (max-width: 560px) {
+
+      .templates-topbar {
+        padding: 0 13px;
+      }
+
+      .template-brand-subtitle {
+        display: none;
+      }
+
+      .template-top-actions .template-btn:first-child {
+        display: none;
+      }
+
+      .templates-hero {
+        padding-top: 55px;
+      }
+
+      .template-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .templates-cta {
+        padding: 28px;
+      }
+
+      .templates-footer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     TOP BAR
+     ========================================================= -->
+
+<header class="templates-topbar">
+
+  <a
+    href="index.html"
+    class="template-brand"
+  >
+
+    <img
+      src="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
+      alt="SNK Logo"
+    >
+
+    <div class="template-brand-text">
+
+      <div class="template-brand-name">
+        SNK Ad Studio
+      </div>
+
+      <div class="template-brand-subtitle">
+        Template Library
+      </div>
+
+    </div>
+
+  </a>
+
+
+  <nav class="template-nav">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="editor.html">
+      Editor
+    </a>
+
+    <a
+      href="templates.html"
+      class="active"
+    >
+      Templates
+    </a>
+
+    <a href="projects.html">
+      Projects
+    </a>
+
+  </nav>
+
+
+  <div class="template-top-actions">
+
+    <a
+      href="editor.html"
+      class="template-btn"
+    >
+      ← Editor
+    </a>
+
+    <a
+      href="editor.html"
+      class="template-btn primary"
+    >
+      + New Ad
+    </a>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<section class="templates-hero">
+
+  <div class="templates-container">
+
+    <div class="eyebrow">
+
+      <span class="eyebrow-dot"></span>
+
+      SNK Creative Library
+
+    </div>
+
+
+    <h1>
+      Start with a
+      <span>template.</span>
+    </h1>
+
+
+    <p>
+      Skip the repetitive Premiere Pro work.
+      Pick a ready-made structure, change the
+      text, add your media and create your ad.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTROLS
+     ========================================================= -->
+
+<main class="templates-container">
+
+  <section class="template-controls">
+
+    <div class="template-search">
+
+      <span>
+        ⌕
+      </span>
+
+      <input
+        type="search"
+        id="templateSearch"
+        placeholder="Search templates..."
+        autocomplete="off"
+      >
+
+    </div>
+
+
+    <div class="filter-list">
+
+      <button
+        class="filter-btn active"
+        data-filter="all"
+      >
+        All
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="social"
+      >
+        Social
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="institute"
+      >
+        Institute
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="product"
+      >
+        Product
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="presenter"
+      >
+        Presenter
+      </button>
+
+      <button
+        class="filter-btn"
+        data-filter="announcement"
+      >
+        Announcement
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       FEATURED
+       ======================================================= -->
+
+  <section class="featured-template">
+
+    <div class="featured-preview">
+
+      <div class="featured-phone">
+
+        <div class="featured-phone-content">
+
+          <div class="featured-small">
+            SNK Institute
+          </div>
+
+          <h3>
+            Learn.
+            <br>
+            <span>Build.</span>
+            <br>
+            Grow.
+          </h3>
+
+          <div class="featured-line"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="featured-content">
+
+      <div class="label">
+        Featured Template
+      </div>
+
+      <h2>
+        Institute Promo
+      </h2>
+
+      <p>
+        A premium vertical promotional structure
+        designed for courses, training programs,
+        workshops and educational campaigns.
+      </p>
+
+
+      <div class="featured-meta">
+
+        <span class="meta-tag">
+          9:16
+        </span>
+
+        <span class="meta-tag">
+          15 sec
+        </span>
+
+        <span class="meta-tag">
+          Text Animation
+        </span>
+
+        <span class="meta-tag">
+          CTA
+        </span>
+
+      </div>
+
+
+      <div>
+
+        <button
+          class="template-btn primary"
+          id="featuredUse"
+        >
+          Use This Template →
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       TEMPLATE LIST
+       ======================================================= -->
+
+  <section>
+
+    <div class="section-heading">
+
+      <div>
+
+        <h2>
+          All Templates
+        </h2>
+
+        <p>
+          Ready-to-edit creative starting points.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="template-grid"
+      id="templateGrid"
+    >
+
+
+      <!-- ===================================================
+           TEMPLATE 01
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="social"
+        data-name="kinetic headline"
+      >
+
+        <div class="template-preview vertical">
+
+          <div class="preview-bg preview-dark"></div>
+
+          <div class="preview-circle"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              SNK
+            </div>
+
+            <div class="preview-title">
+              MAKE
+              <br>
+              <span class="preview-accent">
+                NOISE.
+              </span>
+            </div>
+
+            <div class="preview-button">
+              Learn More
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Kinetic Headline
+              </h3>
+
+              <p>
+                Fast text-focused social ad.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              9:16
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Social
+            </span>
+
+            <button
+              class="use-template"
+              data-use="kinetic"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 02
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="institute"
+        data-name="course launch"
+      >
+
+        <div class="template-preview vertical">
+
+          <div class="preview-bg preview-gradient"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              New Course
+            </div>
+
+            <div class="preview-title">
+              MASTER
+              <br>
+              <span class="preview-accent">
+                DESIGN.
+              </span>
+            </div>
+
+            <div class="preview-button">
+              Enroll Now
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Course Launch
+              </h3>
+
+              <p>
+                Course and training promotion.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              9:16
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Institute
+            </span>
+
+            <button
+              class="use-template"
+              data-use="course"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 03
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="product"
+        data-name="product spotlight"
+      >
+
+        <div class="template-preview">
+
+          <div class="preview-bg preview-blue"></div>
+
+          <div class="preview-circle"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              New Product
+            </div>
+
+            <div class="preview-title small">
+              Designed
+              <br>
+              <span class="preview-accent">
+                Different.
+              </span>
+            </div>
+
+            <div class="preview-button">
+              Discover
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Product Spotlight
+              </h3>
+
+              <p>
+                Clean product showcase.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              16:9
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Product
+            </span>
+
+            <button
+              class="use-template"
+              data-use="product"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 04
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="presenter"
+        data-name="presenter intro"
+      >
+
+        <div class="template-preview">
+
+          <div class="preview-bg preview-green"></div>
+
+          <div class="preview-person"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              Presenter
+            </div>
+
+            <div class="preview-title small">
+              Meet
+              <br>
+              <span class="preview-accent">
+                The Expert.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Presenter Intro
+              </h3>
+
+              <p>
+                Camera + text composition.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              16:9
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Presenter
+            </span>
+
+            <button
+              class="use-template"
+              data-use="presenter"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 05
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="announcement"
+        data-name="big announcement"
+      >
+
+        <div class="template-preview vertical">
+
+          <div class="preview-bg preview-purple"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              Announcement
+            </div>
+
+            <div class="preview-title">
+              SOMETHING
+              <br>
+              <span class="preview-accent">
+                BIG.
+              </span>
+            </div>
+
+            <div class="preview-button">
+              Coming Soon
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Big Announcement
+              </h3>
+
+              <p>
+                High-impact announcement.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              9:16
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Announcement
+            </span>
+
+            <button
+              class="use-template"
+              data-use="announcement"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 06
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="social"
+        data-name="quote story"
+      >
+
+        <div class="template-preview vertical">
+
+          <div class="preview-bg preview-dark"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              Thought
+            </div>
+
+            <div class="preview-title small">
+              "Create
+              <br>
+              <span class="preview-accent">
+                With Purpose.
+              </span>
+              "
+            </div>
+
+            <div class="preview-button">
+              Follow SNK
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Quote Story
+              </h3>
+
+              <p>
+                Minimal quote animation.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              9:16
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Social
+            </span>
+
+            <button
+              class="use-template"
+              data-use="quote"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 07
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="product"
+        data-name="sale promo"
+      >
+
+        <div class="template-preview">
+
+          <div class="preview-bg preview-gradient"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              Limited Offer
+            </div>
+
+            <div class="preview-title">
+              30%
+              <br>
+              <span class="preview-accent">
+                OFF.
+              </span>
+            </div>
+
+            <div class="preview-button">
+              Shop Now
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Sale Promo
+              </h3>
+
+              <p>
+                Offer and campaign ad.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              16:9
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Product
+            </span>
+
+            <button
+              class="use-template"
+              data-use="sale"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 08
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="institute"
+        data-name="workshop promo"
+      >
+
+        <div class="template-preview vertical">
+
+          <div class="preview-bg preview-green"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              Workshop
+            </div>
+
+            <div class="preview-title small">
+              BUILD
+              <br>
+              <span class="preview-accent">
+                REAL SKILLS.
+              </span>
+            </div>
+
+            <div class="preview-button">
+              Register
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Workshop Promo
+              </h3>
+
+              <p>
+                Training and event promotion.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              9:16
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Institute
+            </span>
+
+            <button
+              class="use-template"
+              data-use="workshop"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 09
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="social"
+        data-name="three points"
+      >
+
+        <div class="template-preview">
+
+          <div class="preview-bg preview-blue"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              01 / 02 / 03
+            </div>
+
+            <div class="preview-title small">
+              3 THINGS
+              <br>
+              <span class="preview-accent">
+                YOU NEED.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Three Points
+              </h3>
+
+              <p>
+                Listicle-style social video.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              16:9
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Social
+            </span>
+
+            <button
+              class="use-template"
+              data-use="three-points"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 10
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="presenter"
+        data-name="expert tip"
+      >
+
+        <div class="template-preview vertical">
+
+          <div class="preview-bg preview-dark"></div>
+
+          <div class="preview-person"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              Expert Tip
+            </div>
+
+            <div class="preview-title small">
+              HERE'S
+              <br>
+              <span class="preview-accent">
+                THE TRUTH.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Expert Tip
+              </h3>
+
+              <p>
+                Presenter-led educational ad.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              9:16
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Presenter
+            </span>
+
+            <button
+              class="use-template"
+              data-use="expert"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 11
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="announcement"
+        data-name="launch date"
+      >
+
+        <div class="template-preview">
+
+          <div class="preview-bg preview-purple"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              Save The Date
+            </div>
+
+            <div class="preview-title">
+              24
+              <br>
+              <span class="preview-accent">
+                SEPTEMBER.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Launch Date
+              </h3>
+
+              <p>
+                Date-driven campaign opener.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              16:9
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Announcement
+            </span>
+
+            <button
+              class="use-template"
+              data-use="launch"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ===================================================
+           TEMPLATE 12
+           =================================================== -->
+
+      <article
+        class="template-card"
+        data-category="product"
+        data-name="premium product"
+      >
+
+        <div class="template-preview">
+
+          <div class="preview-bg preview-dark"></div>
+
+          <div class="preview-circle"></div>
+
+          <div class="preview-content">
+
+            <div class="preview-kicker">
+              Premium
+            </div>
+
+            <div class="preview-title small">
+              MADE
+              <br>
+              <span class="preview-accent">
+                BETTER.
+              </span>
+            </div>
+
+            <div class="preview-button">
+              Explore
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="template-card-info">
+
+          <div class="template-card-top">
+
+            <div>
+
+              <h3>
+                Premium Product
+              </h3>
+
+              <p>
+                Cinematic product opener.
+              </p>
+
+            </div>
+
+            <span class="template-format">
+              16:9
+            </span>
+
+          </div>
+
+
+          <div class="template-card-footer">
+
+            <span class="template-category">
+              Product
+            </span>
+
+            <button
+              class="use-template"
+              data-use="premium"
+            >
+              Use
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         EMPTY STATE
+         ===================================================== -->
+
+    <div
+      class="empty-state"
+      id="emptyState"
+    >
+
+      <div class="empty-icon">
+        ⌕
+      </div>
+
+      <h3>
+        No templates found
+      </h3>
+
+      <p>
+        Try another search or category.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       CTA
+       ======================================================= -->
+
+  <section class="templates-cta">
+
+    <div>
+
+      <h2>
+        Have your own creative direction?
+      </h2>
+
+      <p>
+        Start from a blank canvas and build
+        your own reusable SNK template.
+      </p>
+
+    </div>
+
+
+    <a
+      href="editor.html"
+      class="template-btn primary"
+    >
+      Start From Scratch →
+    </a>
+
+  </section>
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
+
+  <footer class="templates-footer">
+
+    <span>
+      © <span id="year"></span> SNK Ad Studio
+    </span>
+
+    <span>
+      Built for faster creative production.
+    </span>
+
+  </footer>
+
+</main>
+
+
+<!-- =========================================================
+     TEMPLATE PREVIEW MODAL
+     ========================================================= -->
+
+<div
+  class="template-modal"
+  id="templateModal"
+>
+
+  <div class="modal-box">
+
+    <div class="modal-head">
+
+      <strong id="modalTitle">
+        Template
+      </strong>
+
+      <button
+        class="modal-close"
+        id="modalClose"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="modal-content">
+
+      <div
+        class="modal-preview"
+        id="modalPreview"
+      >
+      </div>
+
+
+      <h2 id="modalHeading">
+        Template
+      </h2>
+
+
+      <p id="modalDescription">
+        Ready-to-edit template.
+      </p>
+
+
+      <div class="modal-actions">
+
+        <button
+          class="template-btn"
+          id="modalCancel"
+        >
+          Cancel
+        </button>
+
+        <button
+          class="template-btn primary"
+          id="modalUse"
+        >
+          Use Template →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  /* =========================================================
+     SNK AD STUDIO — TEMPLATE SYSTEM
+     ========================================================= */
+
+  const Templates = {
+
+    selected: null,
+
+    data: {
+
+      kinetic: {
+        name: "Kinetic Headline",
+        category: "Social",
+        format: "9:16",
+        duration: 12,
+        description:
+          "A fast, typography-first social ad designed around bold kinetic headlines.",
+        background:
+          "#080a0d"
+      },
+
+      course: {
+        name: "Course Launch",
+        category: "Institute",
+        format: "9:16",
+        duration: 15,
+        description:
+          "Promote a new course, class or training program with a premium educational layout.",
+        background:
+          "#15110a"
+      },
+
+      product: {
+        name: "Product Spotlight",
+        category: "Product",
+        format: "16:9",
+        duration: 15,
+        description:
+          "A clean product-focused structure for highlighting features, benefits and a CTA.",
+        background:
+          "#0c1722"
+      },
+
+      presenter: {
+        name: "Presenter Intro",
+        category: "Presenter",
+        format: "16:9",
+        duration: 20,
+        description:
+          "Combine your camera recording with animated text and branded presenter graphics.",
+        background:
+          "#0a1812"
+      },
+
+      announcement: {
+        name: "Big Announcement",
+        category: "Announcement",
+        format: "9:16",
+        duration: 10,
+        description:
+          "A high-impact vertical announcement template with large animated typography.",
+        background:
+          "#151020"
+      },
+
+      quote: {
+        name: "Quote Story",
+        category: "Social",
+        format: "9:16",
+        duration: 10,
+        description:
+          "Minimal quote format for Instagram Stories, Reels and short-form social content.",
+        background:
+          "#080a0d"
+      },
+
+      sale: {
+        name: "Sale Promo",
+        category: "Product",
+        format: "16:9",
+        duration: 12,
+        description:
+          "Promote offers, discounts and campaigns with a direct visual hierarchy.",
+        background:
+          "#15110a"
+      },
+
+      workshop: {
+        name: "Workshop Promo",
+        category: "Institute",
+        format: "9:16",
+        duration: 15,
+        description:
+          "A ready-made promotional structure for workshops, seminars and training events.",
+        background:
+          "#0a1812"
+      },
+
+      "three-points": {
+        name: "Three Points",
+        category: "Social",
+        format: "16:9",
+        duration: 18,
+        description:
+          "Listicle-style structure for presenting three ideas, tips, features or lessons.",
+        background:
+          "#0c1722"
+      },
+
+      expert: {
+        name: "Expert Tip",
+        category: "Presenter",
+        format: "9:16",
+        duration: 20,
+        description:
+          "Presenter-led educational format for expert advice and short teaching videos.",
+        background:
+          "#080a0d"
+      },
+
+      launch: {
+        name: "Launch Date",
+        category: "Announcement",
+        format: "16:9",
+        duration: 10,
+        description:
+          "Date-focused campaign opener for launches, events and important announcements.",
+        background:
+          "#151020"
+      },
+
+      premium: {
+        name: "Premium Product",
+        category: "Product",
+        format: "16:9",
+        duration: 15,
+        description:
+          "A cinematic product opener designed for premium brands and polished campaigns.",
+        background:
+          "#080a0d"
+      }
+
+    }
+
+  };
+
+
+  /* =========================================================
+     ELEMENTS
+     ========================================================= */
+
+  const searchInput =
+    document.getElementById(
+      "templateSearch"
+    );
+
+  const filterButtons =
+    document.querySelectorAll(
+      ".filter-btn"
+    );
+
+  const cards =
+    document.querySelectorAll(
+      ".template-card"
+    );
+
+  const emptyState =
+    document.getElementById(
+      "emptyState"
+    );
+
+
+  /* =========================================================
+     FILTER
+     ========================================================= */
+
+  let activeFilter = "all";
+
+
+  filterButtons.forEach(
+    button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          filterButtons.forEach(
+            item =>
+              item.classList.remove(
+                "active"
+              )
+          );
+
+          button.classList.add(
+            "active"
+          );
+
+          activeFilter =
+            button.dataset.filter;
+
+          filterTemplates();
+
+        }
+      );
+
+    }
+  );
+
+
+  searchInput.addEventListener(
+    "input",
+    filterTemplates
+  );
+
+
+  function filterTemplates() {
+
+    const query =
+      searchInput.value
+        .trim()
+        .toLowerCase();
+
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+
+      const category =
+        card.dataset.category;
+
+      const name =
+        card.dataset.name;
+
+      const categoryMatch =
+        activeFilter === "all" ||
+        category === activeFilter;
+
+      const searchMatch =
+        !query ||
+        name.includes(query) ||
+        category.includes(query);
+
+      if (
+        categoryMatch &&
+        searchMatch
+      ) {
+
+        card.classList.remove(
+          "hidden"
+        );
+
+        visibleCount++;
+
+      } else {
+
+        card.classList.add(
+          "hidden"
+        );
+
+      }
+
+    });
+
+
+    emptyState.classList.toggle(
+      "show",
+      visibleCount === 0
+    );
+
+  }
+
+
+  /* =========================================================
+     TEMPLATE MODAL
+     ========================================================= */
+
+  const modal =
+    document.getElementById(
+      "templateModal"
+    );
+
+  const modalTitle =
+    document.getElementById(
+      "modalTitle"
+    );
+
+  const modalHeading =
+    document.getElementById(
+      "modalHeading"
+    );
+
+  const modalDescription =
+    document.getElementById(
+      "modalDescription"
+    );
+
+  const modalPreview =
+    document.getElementById(
+      "modalPreview"
+    );
+
+
+  function openTemplateModal(
+    templateId
+  ) {
+
+    const template =
+      Templates.data[templateId];
+
+    if (!template) {
+
+      startTemplate(
+        templateId
+      );
+
+      return;
+
+    }
+
+    Templates.selected =
+      templateId;
+
+    modalTitle.textContent =
+      template.name;
+
+    modalHeading.textContent =
+      template.name;
+
+    modalDescription.textContent =
+      template.description;
+
+    modalPreview.style.background =
+      template.background;
+
+    modalPreview.innerHTML = `
+
+      <div style="
+        width:100%;
+        height:100%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+        text-align:center;
+        padding:30px;
+      ">
+
+        <div style="
+          color:#d8a64b;
+          font-size:9px;
+          font-weight:800;
+          letter-spacing:.14em;
+          text-transform:uppercase;
+          margin-bottom:12px;
+        ">
+          ${template.category}
+        </div>
+
+        <div style="
+          font-size:32px;
+          font-weight:800;
+          letter-spacing:-.06em;
+          line-height:1;
+        ">
+          ${template.name}
+        </div>
+
+        <div style="
+          margin-top:15px;
+          color:#89939f;
+          font-size:9px;
+        ">
+          ${template.format}
+          &nbsp; • &nbsp;
+          ${template.duration}s
+        </div>
+
+      </div>
+
+    `;
+
+    modal.classList.add(
+      "open"
+    );
+
+  }
+
+
+  document
+    .querySelectorAll(
+      ".use-template"
+    )
+    .forEach(
+      button => {
+
+        button.addEventListener(
+          "click",
+          event => {
+
+            event.stopPropagation();
+
+            const id =
+              button.dataset.use;
+
+            openTemplateModal(id);
+
+          }
+        );
+
+      }
+    );
+
+
+  cards.forEach(
+    card => {
+
+      card.addEventListener(
+        "click",
+        event => {
+
+          if (
+            event.target.closest(
+              ".use-template"
+            )
+          ) return;
+
+          const name =
+            card.dataset.name;
+
+          const matching =
+            Object.entries(
+              Templates.data
+            ).find(
+              ([, item]) =>
+                item.name
+                  .toLowerCase()
+                  .includes(name)
+            );
+
+          if (matching) {
+
+            openTemplateModal(
+              matching[0]
+            );
+
+          }
+
+        }
+      );
+
+    }
+  );
+
+
+  /* =========================================================
+     FEATURED
+     ========================================================= */
+
+  document
+    .getElementById("featuredUse")
+    .addEventListener(
+      "click",
+      () => {
+
+        openTemplateModal(
+          "course"
+        );
+
+      }
+    );
+
+
+  /* =========================================================
+     MODAL CLOSE
+     ========================================================= */
+
+  document
+    .getElementById("modalClose")
+    .addEventListener(
+      "click",
+      closeModal
+    );
+
+
+  document
+    .getElementById("modalCancel")
+    .addEventListener(
+      "click",
+      closeModal
+    );
+
+
+  modal.addEventListener(
+    "click",
+    event => {
+
+      if (
+        event.target === modal
+      ) {
+
+        closeModal();
+
+      }
+
+    }
+  );
+
+
+  function closeModal() {
+
+    modal.classList.remove(
+      "open"
+    );
+
+  }
+
+
+  /* =========================================================
+     USE TEMPLATE
+     ========================================================= */
+
+  document
+    .getElementById("modalUse")
+    .addEventListener(
+      "click",
+      () => {
+
+        if (
+          !Templates.selected
+        ) return;
+
+        startTemplate(
+          Templates.selected
+        );
+
+      }
+    );
+
+
+  function startTemplate(
+    templateId
+  ) {
+
+    const template =
+      Templates.data[
+        templateId
+      ];
+
+    if (!template) {
+
+      window.location.href =
+        "editor.html";
+
+      return;
+
+    }
+
+
+    /*
+      Store selected template
+      temporarily so editor.html
+      can load it.
+    */
+
+    localStorage.setItem(
+      "snk-ad-studio-template",
+      JSON.stringify({
+
+        id: templateId,
+
+        ...template,
+
+        createdAt:
+          new Date().toISOString()
+
+      })
+    );
+
+
+    window.location.href =
+      `editor.html?template=${encodeURIComponent(templateId)}`;
+
+  }
+
+
+  /* =========================================================
+     KEYBOARD
+     ========================================================= */
+
+  document.addEventListener(
+    "keydown",
+    event => {
+
+      if (
+        event.key === "Escape"
+      ) {
+
+        closeModal();
+
+      }
+
+      if (
+        event.ctrlKey &&
+        event.key.toLowerCase() === "k"
+      ) {
+
+        event.preventDefault();
+
+        searchInput.focus();
+
+      }
+
+    }
+  );
+
+
+  /* =========================================================
+     YEAR
+     ========================================================= */
+
+  document.getElementById(
+    "year"
+  ).textContent =
+    new Date().getFullYear();
+
+
+  /* =========================================================
+     INITIAL FILTER
+     ========================================================= */
+
+  filterTemplates();
+
+</script>
+
+</body>
+</html>
