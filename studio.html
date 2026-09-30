@@ -1,0 +1,3477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Studio | SNK Ad Studio
+  </title>
+
+  <meta
+    name="description"
+    content="SNK Ad Studio virtual production workspace."
+  >
+
+  <meta
+    name="theme-color"
+    content="#07080b"
+  >
+
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="studio.css"
+  >
+
+</head>
+
+
+<body>
+
+<div class="studio-app">
+
+
+  <!-- =====================================================
+       TOP BAR
+  ====================================================== -->
+
+  <header class="studio-topbar">
+
+
+    <!-- BRAND -->
+
+    <div class="studio-brand">
+
+      <a
+        href="index.html"
+        class="back-button"
+        title="Back to SNK Ad Studio"
+      >
+        ←
+      </a>
+
+
+      <div class="studio-brand-logo">
+
+        <img
+          src="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
+          alt="SNK"
+        >
+
+      </div>
+
+
+      <div class="studio-brand-text">
+
+        <strong>
+          SNK
+        </strong>
+
+        <span>
+          Ad Studio
+        </span>
+
+      </div>
+
+
+      <div class="studio-divider"></div>
+
+
+      <div class="project-name">
+
+        <span>
+          PROJECT
+        </span>
+
+        <strong>
+          New Production
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <!-- TOP CENTER -->
+
+    <div class="top-center">
+
+      <div class="save-status">
+
+        <span class="save-dot"></span>
+
+        <span>
+          All changes saved
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- TOP ACTIONS -->
+
+    <div class="studio-top-actions">
+
+
+      <button
+        class="top-icon-btn"
+        id="undoBtn"
+        title="Undo"
+      >
+        ↶
+      </button>
+
+
+      <button
+        class="top-icon-btn"
+        id="redoBtn"
+        title="Redo"
+      >
+        ↷
+      </button>
+
+
+      <div class="top-divider"></div>
+
+
+      <button
+        class="preview-btn"
+        id="previewBtn"
+      >
+        <span>
+          ▶
+        </span>
+
+        Preview
+      </button>
+
+
+      <button
+        class="export-btn"
+        id="exportBtn"
+      >
+        Export
+        <span>
+          ↑
+        </span>
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MAIN WORKSPACE
+  ====================================================== -->
+
+  <main class="workspace">
+
+
+    <!-- ===================================================
+         LEFT TOOL PANEL
+    ==================================================== -->
+
+    <aside class="left-panel">
+
+
+      <div class="panel-section-title">
+        PRODUCTION
+      </div>
+
+
+      <!-- CAMERA -->
+
+      <button
+        class="tool-button active"
+        data-tool="camera"
+      >
+
+        <span class="tool-symbol">
+          🎥
+        </span>
+
+        <span class="tool-label">
+          Camera
+        </span>
+
+      </button>
+
+
+      <!-- BACKGROUND -->
+
+      <button
+        class="tool-button"
+        data-tool="background"
+      >
+
+        <span class="tool-symbol">
+          🏠
+        </span>
+
+        <span class="tool-label">
+          Background
+        </span>
+
+      </button>
+
+
+      <!-- LIGHTING -->
+
+      <button
+        class="tool-button"
+        data-tool="lighting"
+      >
+
+        <span class="tool-symbol">
+          💡
+        </span>
+
+        <span class="tool-label">
+          Lighting
+        </span>
+
+      </button>
+
+
+      <!-- LOOK -->
+
+      <button
+        class="tool-button"
+        data-tool="look"
+      >
+
+        <span class="tool-symbol">
+          ✨
+        </span>
+
+        <span class="tool-label">
+          Look
+        </span>
+
+      </button>
+
+
+      <!-- SCRIPT -->
+
+      <button
+        class="tool-button"
+        data-tool="script"
+      >
+
+        <span class="tool-symbol">
+          📝
+        </span>
+
+        <span class="tool-label">
+          Script
+        </span>
+
+      </button>
+
+
+      <!-- GRAPHICS -->
+
+      <button
+        class="tool-button"
+        data-tool="graphics"
+      >
+
+        <span class="tool-symbol">
+          🎨
+        </span>
+
+        <span class="tool-label">
+          Graphics
+        </span>
+
+      </button>
+
+
+      <!-- AUDIO -->
+
+      <button
+        class="tool-button"
+        data-tool="audio"
+      >
+
+        <span class="tool-symbol">
+          🎙
+        </span>
+
+        <span class="tool-label">
+          Audio
+        </span>
+
+      </button>
+
+
+      <div class="left-panel-spacer"></div>
+
+
+      <!-- FORMAT -->
+
+      <button
+        class="tool-button"
+        data-tool="format"
+      >
+
+        <span class="tool-symbol">
+          📐
+        </span>
+
+        <span class="tool-label">
+          Format
+        </span>
+
+      </button>
+
+
+      <!-- SETTINGS -->
+
+      <button
+        class="tool-button"
+        data-tool="settings"
+      >
+
+        <span class="tool-symbol">
+          ⚙
+        </span>
+
+        <span class="tool-label">
+          Settings
+        </span>
+
+      </button>
+
+    </aside>
+
+
+
+    <!-- ===================================================
+         SECONDARY PANEL
+    ==================================================== -->
+
+    <aside
+      class="control-panel"
+      id="controlPanel"
+    >
+
+
+      <!-- ===============================================
+           CAMERA PANEL
+      ================================================ -->
+
+      <section
+        class="control-view active"
+        data-view="camera"
+      >
+
+        <div class="control-header">
+
+          <div>
+
+            <span>
+              PRODUCTION
+            </span>
+
+            <h2>
+              Camera
+            </h2>
+
+          </div>
+
+          <span class="panel-status">
+            READY
+          </span>
+
+        </div>
+
+
+        <div class="control-card camera-device-card">
+
+          <div class="card-label">
+            CAMERA SOURCE
+          </div>
+
+
+          <button class="select-control">
+
+            <span>
+              Built-in Camera
+            </span>
+
+            <span>
+              ▾
+            </span>
+
+          </button>
+
+
+          <div class="control-row">
+
+            <span>
+              Resolution
+            </span>
+
+            <strong>
+              1080p
+            </strong>
+
+          </div>
+
+
+          <div class="control-row">
+
+            <span>
+              Frame Rate
+            </span>
+
+            <strong>
+              30 FPS
+            </strong>
+
+          </div>
+
+
+          <div class="control-row">
+
+            <span>
+              Mirror
+            </span>
+
+            <label class="switch">
+
+              <input
+                type="checkbox"
+                checked
+              >
+
+              <span></span>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <div class="control-card">
+
+          <div class="card-label">
+            FRAMING
+          </div>
+
+
+          <div class="format-pills">
+
+            <button class="pill active">
+              Portrait
+            </button>
+
+            <button class="pill">
+              Landscape
+            </button>
+
+            <button class="pill">
+              Square
+            </button>
+
+          </div>
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Zoom
+              </span>
+
+              <strong>
+                1.0x
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              min="0.5"
+              max="2"
+              step="0.1"
+              value="1"
+            >
+
+          </div>
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Position
+              </span>
+
+              <strong>
+                Center
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              min="-100"
+              max="100"
+              value="0"
+            >
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="primary-panel-button"
+          id="enableCameraBtn"
+        >
+
+          <span>
+            🎥
+          </span>
+
+          Enable Camera
+
+        </button>
+
+      </section>
+
+
+
+      <!-- ===============================================
+           BACKGROUND PANEL
+      ================================================ -->
+
+      <section
+        class="control-view"
+        data-view="background"
+      >
+
+        <div class="control-header">
+
+          <div>
+
+            <span>
+              VIRTUAL SET
+            </span>
+
+            <h2>
+              Background
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="background-grid">
+
+
+          <button class="background-card active">
+
+            <div class="background-thumb studio-bg">
+              <span>
+                SNK
+              </span>
+            </div>
+
+            <strong>
+              SNK Studio
+            </strong>
+
+          </button>
+
+
+          <button class="background-card">
+
+            <div class="background-thumb office-bg">
+              <span>
+                OFFICE
+              </span>
+            </div>
+
+            <strong>
+              Modern Office
+            </strong>
+
+          </button>
+
+
+          <button class="background-card">
+
+            <div class="background-thumb classroom-bg">
+              <span>
+                CLASS
+              </span>
+            </div>
+
+            <strong>
+              Classroom
+            </strong>
+
+          </button>
+
+
+          <button class="background-card">
+
+            <div class="background-thumb dark-bg">
+              <span>
+                CINEMA
+              </span>
+            </div>
+
+            <strong>
+              Dark Cinema
+            </strong>
+
+          </button>
+
+
+          <button class="background-card">
+
+            <div class="background-thumb luxury-bg">
+              <span>
+                LUXURY
+              </span>
+            </div>
+
+            <strong>
+              Luxury Room
+            </strong>
+
+          </button>
+
+
+          <button class="background-card">
+
+            <div class="background-thumb gradient-bg">
+              <span>
+                CUSTOM
+              </span>
+            </div>
+
+            <strong>
+              Gradient
+            </strong>
+
+          </button>
+
+        </div>
+
+
+        <button class="upload-button">
+
+          + Upload Background
+
+        </button>
+
+      </section>
+
+
+
+      <!-- ===============================================
+           LIGHTING PANEL
+      ================================================ -->
+
+      <section
+        class="control-view"
+        data-view="lighting"
+      >
+
+        <div class="control-header">
+
+          <div>
+
+            <span>
+              VIRTUAL LIGHTING
+            </span>
+
+            <h2>
+              Lighting
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="light-preview">
+
+          <div class="light-face"></div>
+
+          <div class="light-beam"></div>
+
+        </div>
+
+
+        <div class="control-card">
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Key Light
+              </span>
+
+              <strong>
+                72%
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              value="72"
+            >
+
+          </div>
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Fill Light
+              </span>
+
+              <strong>
+                45%
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              value="45"
+            >
+
+          </div>
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Rim Light
+              </span>
+
+              <strong>
+                38%
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              value="38"
+            >
+
+          </div>
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Warmth
+              </span>
+
+              <strong>
+                55%
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              value="55"
+            >
+
+          </div>
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Brightness
+              </span>
+
+              <strong>
+                60%
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              value="60"
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="preset-title">
+          LIGHT PRESETS
+        </div>
+
+
+        <div class="preset-grid">
+
+          <button class="preset active">
+            Clean
+          </button>
+
+          <button class="preset">
+            Cinema
+          </button>
+
+          <button class="preset">
+            Warm
+          </button>
+
+          <button class="preset">
+            Studio
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ===============================================
+           LOOK PANEL
+      ================================================ -->
+
+      <section
+        class="control-view"
+        data-view="look"
+      >
+
+        <div class="control-header">
+
+          <div>
+
+            <span>
+              IMAGE STYLE
+            </span>
+
+            <h2>
+              Look
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="look-preview">
+
+          <div class="look-preview-person"></div>
+
+        </div>
+
+
+        <div class="look-presets">
+
+          <button class="look-card active">
+
+            <span>
+              CLEAN
+            </span>
+
+            <strong>
+              Natural
+            </strong>
+
+          </button>
+
+
+          <button class="look-card">
+
+            <span>
+              CINEMA
+            </span>
+
+            <strong>
+              Cinematic
+            </strong>
+
+          </button>
+
+
+          <button class="look-card">
+
+            <span>
+              CORPORATE
+            </span>
+
+            <strong>
+              Professional
+            </strong>
+
+          </button>
+
+
+          <button class="look-card">
+
+            <span>
+              SOCIAL
+            </span>
+
+            <strong>
+              Bright
+            </strong>
+
+          </button>
+
+        </div>
+
+
+        <div class="control-card">
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Skin Smooth
+              </span>
+
+              <strong>
+                20%
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              value="20"
+            >
+
+          </div>
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Contrast
+              </span>
+
+              <strong>
+                52%
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              value="52"
+            >
+
+          </div>
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Sharpness
+              </span>
+
+              <strong>
+                35%
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              value="35"
+            >
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ===============================================
+           SCRIPT / TELEPROMPTER
+      ================================================ -->
+
+      <section
+        class="control-view"
+        data-view="script"
+      >
+
+        <div class="control-header">
+
+          <div>
+
+            <span>
+              PRESENTER
+            </span>
+
+            <h2>
+              Teleprompter
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <textarea
+          class="script-editor"
+          id="scriptEditor"
+          placeholder="Write or paste your script here..."
+        >Assalamu Alaikum.
+
+Welcome to SNK IT Institute.
+
+Learn new skills.
+Build your future.
+
+Admission is now open.</textarea>
+
+
+        <div class="control-card">
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Text Size
+              </span>
+
+              <strong>
+                34px
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              min="18"
+              max="60"
+              value="34"
+              id="teleprompterSize"
+            >
+
+          </div>
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Scroll Speed
+              </span>
+
+              <strong>
+                Medium
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              min="1"
+              max="10"
+              value="5"
+            >
+
+          </div>
+
+
+          <div class="control-row">
+
+            <span>
+              Mirror Text
+            </span>
+
+            <label class="switch">
+
+              <input
+                type="checkbox"
+              >
+
+              <span></span>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <button
+          class="primary-panel-button"
+          id="teleprompterBtn"
+        >
+
+          Start Teleprompter
+
+        </button>
+
+      </section>
+
+
+
+      <!-- ===============================================
+           GRAPHICS
+      ================================================ -->
+
+      <section
+        class="control-view"
+        data-view="graphics"
+      >
+
+        <div class="control-header">
+
+          <div>
+
+            <span>
+              VISUAL DESIGN
+            </span>
+
+            <h2>
+              Graphics
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="graphics-actions">
+
+          <button class="graphic-add">
+
+            <span>
+              T
+            </span>
+
+            Add Text
+
+          </button>
+
+
+          <button class="graphic-add">
+
+            <span>
+              ▣
+            </span>
+
+            Logo
+
+          </button>
+
+
+          <button class="graphic-add">
+
+            <span>
+              ◆
+            </span>
+
+            CTA
+
+          </button>
+
+
+          <button class="graphic-add">
+
+            <span>
+              ━
+            </span>
+
+            Lower Third
+
+          </button>
+
+        </div>
+
+
+        <div class="control-card">
+
+          <div class="card-label">
+            SELECTED TEXT
+          </div>
+
+
+          <input
+            class="text-input"
+            value="ADMISSION OPEN"
+          >
+
+
+          <div class="font-select">
+
+            <span>
+              Inter
+            </span>
+
+            <span>
+              Bold ▾
+            </span>
+
+          </div>
+
+
+          <div class="color-row">
+
+            <span>
+              Text Color
+            </span>
+
+            <button class="color-picker">
+              <span></span>
+              SNK Gold
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="animation-title">
+          TEXT ANIMATION
+        </div>
+
+
+        <div class="animation-grid">
+
+          <button class="animation-card active">
+            Fade
+          </button>
+
+          <button class="animation-card">
+            Slide
+          </button>
+
+          <button class="animation-card">
+            Word
+          </button>
+
+          <button class="animation-card">
+            Type
+          </button>
+
+          <button class="animation-card">
+            Zoom
+          </button>
+
+          <button class="animation-card">
+            Glitch
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ===============================================
+           AUDIO
+      ================================================ -->
+
+      <section
+        class="control-view"
+        data-view="audio"
+      >
+
+        <div class="control-header">
+
+          <div>
+
+            <span>
+              SOUND
+            </span>
+
+            <h2>
+              Audio
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="audio-meter">
+
+          <div class="meter-label">
+            MICROPHONE
+          </div>
+
+          <div class="meter-bars">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+          </div>
+
+          <strong>
+            READY
+          </strong>
+
+        </div>
+
+
+        <div class="control-card">
+
+          <div class="card-label">
+            INPUT
+          </div>
+
+
+          <button class="select-control">
+
+            <span>
+              Default Microphone
+            </span>
+
+            <span>
+              ▾
+            </span>
+
+          </button>
+
+
+          <div class="range-control">
+
+            <div class="range-header">
+
+              <span>
+                Input Volume
+              </span>
+
+              <strong>
+                80%
+              </strong>
+
+            </div>
+
+            <input
+              type="range"
+              value="80"
+            >
+
+          </div>
+
+
+          <div class="control-row">
+
+            <span>
+              Noise Reduction
+            </span>
+
+            <label class="switch">
+
+              <input
+                type="checkbox"
+                checked
+              >
+
+              <span></span>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <button class="upload-button">
+
+          + Add Music
+
+        </button>
+
+      </section>
+
+
+
+      <!-- ===============================================
+           FORMAT
+      ================================================ -->
+
+      <section
+        class="control-view"
+        data-view="format"
+      >
+
+        <div class="control-header">
+
+          <div>
+
+            <span>
+              OUTPUT
+            </span>
+
+            <h2>
+              Format
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="format-large-grid">
+
+
+          <button class="format-card active">
+
+            <strong>
+              9:16
+            </strong>
+
+            <span>
+              Reels / Shorts
+            </span>
+
+          </button>
+
+
+          <button class="format-card">
+
+            <strong>
+              16:9
+            </strong>
+
+            <span>
+              YouTube
+            </span>
+
+          </button>
+
+
+          <button class="format-card">
+
+            <strong>
+              1:1
+            </strong>
+
+            <span>
+              Instagram
+            </span>
+
+          </button>
+
+
+          <button class="format-card">
+
+            <strong>
+              4:5
+            </strong>
+
+            <span>
+              Facebook
+            </span>
+
+          </button>
+
+        </div>
+
+
+        <div class="control-card">
+
+          <div class="control-row">
+
+            <span>
+              Resolution
+            </span>
+
+            <strong>
+              1080p
+            </strong>
+
+          </div>
+
+
+          <div class="control-row">
+
+            <span>
+              Frame Rate
+            </span>
+
+            <strong>
+              30 FPS
+            </strong>
+
+          </div>
+
+
+          <div class="control-row">
+
+            <span>
+              Quality
+            </span>
+
+            <strong>
+              High
+            </strong>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ===============================================
+           SETTINGS
+      ================================================ -->
+
+      <section
+        class="control-view"
+        data-view="settings"
+      >
+
+        <div class="control-header">
+
+          <div>
+
+            <span>
+              STUDIO
+            </span>
+
+            <h2>
+              Settings
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="settings-list">
+
+
+          <div class="setting-item">
+
+            <div>
+
+              <strong>
+                Auto Save
+              </strong>
+
+              <span>
+                Save production changes automatically.
+              </span>
+
+            </div>
+
+            <label class="switch">
+
+              <input
+                type="checkbox"
+                checked
+              >
+
+              <span></span>
+
+            </label>
+
+          </div>
+
+
+          <div class="setting-item">
+
+            <div>
+
+              <strong>
+                Dark Interface
+              </strong>
+
+              <span>
+                Use cinematic dark workspace.
+              </span>
+
+            </div>
+
+            <label class="switch">
+
+              <input
+                type="checkbox"
+                checked
+              >
+
+              <span></span>
+
+            </label>
+
+          </div>
+
+
+          <div class="setting-item">
+
+            <div>
+
+              <strong>
+                Performance Mode
+              </strong>
+
+              <span>
+                Optimize preview for slower devices.
+              </span>
+
+            </div>
+
+            <label class="switch">
+
+              <input
+                type="checkbox"
+              >
+
+              <span></span>
+
+            </label>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+    </aside>
+
+
+
+    <!-- ===================================================
+         MAIN CANVAS AREA
+    ==================================================== -->
+
+    <section class="main-stage">
+
+
+      <!-- CANVAS HEADER -->
+
+      <div class="stage-header">
+
+
+        <div class="stage-project">
+
+          <span>
+            LIVE CANVAS
+          </span>
+
+          <strong>
+            Presenter Production
+          </strong>
+
+        </div>
+
+
+        <div class="stage-tools">
+
+
+          <button
+            class="stage-icon-btn"
+            title="Fit"
+          >
+            ⛶
+          </button>
+
+
+          <button
+            class="stage-icon-btn"
+            title="Grid"
+          >
+            #
+          </button>
+
+
+          <div class="zoom-control">
+
+            <button>
+              −
+            </button>
+
+            <span>
+              100%
+            </span>
+
+            <button>
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           CANVAS
+      ================================================== -->
+
+      <div class="canvas-stage">
+
+
+        <div
+          class="production-canvas-main"
+          id="productionCanvas"
+        >
+
+
+          <!-- VIRTUAL ENVIRONMENT -->
+
+          <div class="canvas-environment">
+
+
+            <div class="environment-glow glow-one"></div>
+
+            <div class="environment-glow glow-two"></div>
+
+
+            <div class="environment-wall">
+
+              <div class="wall-lines"></div>
+
+              <div class="wall-logo">
+
+                <img
+                  src="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
+                  alt="SNK"
+                >
+
+                <span>
+                  SNK IT INSTITUTE
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="environment-floor"></div>
+
+
+            <!-- CAMERA PERSON -->
+
+            <div
+              class="presenter-layer"
+              id="presenterLayer"
+            >
+
+              <div class="presenter-shadow"></div>
+
+              <div class="presenter-head">
+
+                <div class="hair"></div>
+
+              </div>
+
+              <div class="presenter-body"></div>
+
+            </div>
+
+
+            <!-- CAMERA STATUS -->
+
+            <div class="camera-status">
+
+              <span class="camera-live-dot"></span>
+
+              CAMERA
+
+            </div>
+
+
+            <!-- GRAPHIC OVERLAY -->
+
+            <div class="canvas-title-overlay">
+
+              <span>
+                SNK IT INSTITUTE
+              </span>
+
+              <strong>
+                LEARN.<br>
+                BUILD.<br>
+                GROW.
+              </strong>
+
+              <small>
+                ADMISSION OPEN
+              </small>
+
+            </div>
+
+
+            <!-- SAFE AREA -->
+
+            <div class="safe-area">
+
+              <span class="safe-corner top-left"></span>
+              <span class="safe-corner top-right"></span>
+              <span class="safe-corner bottom-left"></span>
+              <span class="safe-corner bottom-right"></span>
+
+            </div>
+
+
+          </div>
+
+
+          <!-- EMPTY CAMERA MESSAGE -->
+
+          <div
+            class="camera-empty"
+            id="cameraEmpty"
+          >
+
+            <div class="camera-empty-icon">
+              🎥
+            </div>
+
+            <h3>
+              Camera is ready
+            </h3>
+
+            <p>
+              Enable your camera to preview yourself
+              inside the virtual production environment.
+            </p>
+
+            <button
+              id="emptyEnableCamera"
+              class="camera-enable-button"
+            >
+              Enable Camera
+            </button>
+
+          </div>
+
+
+          <!-- RECORD INDICATOR -->
+
+          <div
+            class="record-indicator"
+            id="recordIndicator"
+          >
+
+            <span></span>
+
+            REC
+
+            <strong>
+              00:00:00
+            </strong>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           TRANSPORT CONTROLS
+      ================================================== -->
+
+      <div class="transport-bar">
+
+
+        <div class="transport-left">
+
+          <button>
+            ↶
+          </button>
+
+          <button>
+            ↷
+          </button>
+
+        </div>
+
+
+        <div class="transport-center">
+
+
+          <button class="transport-play">
+            ▶
+          </button>
+
+
+          <button
+            class="main-record-button"
+            id="recordBtn"
+          >
+
+            <span></span>
+
+          </button>
+
+
+          <button>
+            ■
+          </button>
+
+
+        </div>
+
+
+        <div class="transport-right">
+
+          <span>
+            00:00:00
+          </span>
+
+          <span>
+            /
+          </span>
+
+          <span>
+            00:30:00
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           TIMELINE
+      ================================================== -->
+
+      <div class="timeline-panel">
+
+
+        <div class="timeline-header">
+
+
+          <div class="timeline-title">
+
+            <span>
+              TIMELINE
+            </span>
+
+            <strong>
+              00:00:00
+            </strong>
+
+          </div>
+
+
+          <div class="timeline-actions">
+
+            <button>
+              + Track
+            </button>
+
+            <button>
+              Snap
+            </button>
+
+            <button>
+              ⋯
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-content">
+
+
+          <!-- TRACK LABELS -->
+
+          <div class="track-labels">
+
+
+            <div class="track-label">
+
+              <span>
+                🎥
+              </span>
+
+              CAMERA
+
+            </div>
+
+
+            <div class="track-label">
+
+              <span>
+                T
+              </span>
+
+              TEXT
+
+            </div>
+
+
+            <div class="track-label">
+
+              <span>
+                🎵
+              </span>
+
+              AUDIO
+
+            </div>
+
+
+            <div class="track-label">
+
+              <span>
+                ✨
+              </span>
+
+              EFFECTS
+
+            </div>
+
+          </div>
+
+
+          <!-- TRACK AREA -->
+
+          <div class="tracks">
+
+
+            <div class="time-ruler">
+
+              <span>
+                00:00
+              </span>
+
+              <span>
+                00:05
+              </span>
+
+              <span>
+                00:10
+              </span>
+
+              <span>
+                00:15
+              </span>
+
+              <span>
+                00:20
+              </span>
+
+              <span>
+                00:25
+              </span>
+
+              <span>
+                00:30
+              </span>
+
+            </div>
+
+
+            <div class="track-row">
+
+              <div class="clip camera-clip">
+
+                CAMERA RECORDING
+
+              </div>
+
+            </div>
+
+
+            <div class="track-row">
+
+              <div class="clip text-clip">
+
+                ADMISSION OPEN
+
+              </div>
+
+              <div class="clip text-clip second">
+
+                LEARN. BUILD. GROW.
+
+              </div>
+
+            </div>
+
+
+            <div class="track-row">
+
+              <div class="clip audio-clip">
+
+                🎵 BACKGROUND MUSIC
+
+              </div>
+
+            </div>
+
+
+            <div class="track-row">
+
+              <div class="clip effect-clip">
+
+                LIGHTING
+
+              </div>
+
+            </div>
+
+
+            <!-- PLAYHEAD -->
+
+            <div class="timeline-playhead">
+
+              <span></span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         RIGHT INSPECTOR
+    ==================================================== -->
+
+    <aside class="right-panel">
+
+
+      <div class="right-panel-header">
+
+        <span>
+          INSPECTOR
+        </span>
+
+        <button>
+          ⋯
+        </button>
+
+      </div>
+
+
+      <!-- SELECTED OBJECT -->
+
+      <div class="inspector-section">
+
+
+        <div class="inspector-section-title">
+
+          SELECTED
+
+        </div>
+
+
+        <div class="selected-object">
+
+          <div class="object-icon">
+            T
+          </div>
+
+          <div>
+
+            <strong>
+              Admission Open
+            </strong>
+
+            <span>
+              Text Layer
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- POSITION -->
+
+      <div class="inspector-section">
+
+        <div class="inspector-section-title">
+          TRANSFORM
+        </div>
+
+
+        <div class="inspector-grid">
+
+
+          <label>
+
+            <span>
+              X
+            </span>
+
+            <input
+              value="540"
+            >
+
+          </label>
+
+
+          <label>
+
+            <span>
+              Y
+            </span>
+
+            <input
+              value="820"
+            >
+
+          </label>
+
+
+          <label>
+
+            <span>
+              W
+            </span>
+
+            <input
+              value="720"
+            >
+
+          </label>
+
+
+          <label>
+
+            <span>
+              H
+            </span>
+
+            <input
+              value="120"
+            >
+
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <!-- TYPOGRAPHY -->
+
+      <div class="inspector-section">
+
+
+        <div class="inspector-section-title">
+          TYPOGRAPHY
+        </div>
+
+
+        <button class="inspector-select">
+
+          <span>
+            Inter
+          </span>
+
+          <span>
+            ▾
+          </span>
+
+        </button>
+
+
+        <div class="inspector-two-col">
+
+          <button>
+            Bold
+          </button>
+
+          <button>
+            48px
+          </button>
+
+        </div>
+
+
+        <div class="inspector-color">
+
+          <span>
+            Color
+          </span>
+
+          <button>
+
+            <span></span>
+
+            SNK Gold
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- ANIMATION -->
+
+      <div class="inspector-section">
+
+
+        <div class="inspector-section-title">
+          ANIMATION
+        </div>
+
+
+        <button class="inspector-select">
+
+          <span>
+            Word Reveal
+          </span>
+
+          <span>
+            ▾
+          </span>
+
+        </button>
+
+
+        <div class="inspector-row">
+
+          <span>
+            Duration
+          </span>
+
+          <strong>
+            0.80s
+          </strong>
+
+        </div>
+
+
+        <div class="inspector-row">
+
+          <span>
+            Delay
+          </span>
+
+          <strong>
+            0.10s
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <!-- BRAND -->
+
+      <div class="inspector-section">
+
+
+        <div class="inspector-section-title">
+          BRAND
+        </div>
+
+
+        <div class="brand-preview">
+
+          <img
+            src="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
+            alt="SNK"
+          >
+
+          <div>
+
+            <strong>
+              SNK Brand Kit
+            </strong>
+
+            <span>
+              Active
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </aside>
+
+  </main>
+
+
+
+  <!-- =====================================================
+       MOBILE TOOLBAR
+  ====================================================== -->
+
+  <div class="mobile-toolbar">
+
+
+    <button
+      data-mobile-tool="camera"
+    >
+      🎥
+    </button>
+
+
+    <button
+      data-mobile-tool="background"
+    >
+      🏠
+    </button>
+
+
+    <button
+      data-mobile-tool="lighting"
+    >
+      💡
+    </button>
+
+
+    <button
+      data-mobile-tool="script"
+    >
+      📝
+    </button>
+
+
+    <button
+      data-mobile-tool="graphics"
+    >
+      🎨
+    </button>
+
+
+    <button
+      data-mobile-tool="audio"
+    >
+      🎙
+    </button>
+
+
+  </div>
+
+
+
+  <!-- =====================================================
+       RECORDING MODAL
+  ====================================================== -->
+
+  <div
+    class="modal"
+    id="recordModal"
+  >
+
+    <div class="modal-backdrop"></div>
+
+
+    <div class="modal-card">
+
+
+      <button
+        class="modal-close"
+        id="closeRecordModal"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-icon">
+        🎥
+      </div>
+
+
+      <span class="section-mini-label">
+        CAMERA ACCESS
+      </span>
+
+
+      <h2>
+        Ready to record?
+      </h2>
+
+
+      <p>
+        SNK Ad Studio needs access to your camera and microphone
+        to record your production.
+      </p>
+
+
+      <div class="permission-list">
+
+        <div>
+          <span>✓</span>
+          Camera
+        </div>
+
+        <div>
+          <span>✓</span>
+          Microphone
+        </div>
+
+      </div>
+
+
+      <button
+        class="modal-primary"
+        id="modalEnableCamera"
+      >
+        Allow Camera & Microphone
+      </button>
+
+
+      <button
+        class="modal-secondary"
+        id="modalCancel"
+      >
+        Cancel
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       EXPORT MODAL
+  ====================================================== -->
+
+  <div
+    class="modal"
+    id="exportModal"
+  >
+
+    <div class="modal-backdrop"></div>
+
+
+    <div class="modal-card export-card">
+
+
+      <button
+        class="modal-close"
+        id="closeExportModal"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-icon">
+        ↑
+      </div>
+
+
+      <span class="section-mini-label">
+        EXPORT PRODUCTION
+      </span>
+
+
+      <h2>
+        Ready to publish?
+      </h2>
+
+
+      <p>
+        Your production is prepared for export.
+        Choose the final format for your platform.
+      </p>
+
+
+      <div class="export-options">
+
+
+        <button class="export-option active">
+
+          <strong>
+            1080p
+          </strong>
+
+          <span>
+            High Quality
+          </span>
+
+        </button>
+
+
+        <button class="export-option">
+
+          <strong>
+            720p
+          </strong>
+
+          <span>
+            Smaller File
+          </span>
+
+        </button>
+
+      </div>
+
+
+      <button
+        class="modal-primary"
+        id="startExportBtn"
+      >
+        Start Export
+      </button>
+
+
+      <div
+        class="export-progress"
+        id="exportProgress"
+      >
+
+        <div></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script>
+
+    /* =====================================================
+       TOOL SWITCHING
+    ====================================================== */
+
+    const toolButtons =
+      document.querySelectorAll(
+        ".tool-button"
+      );
+
+    const controlViews =
+      document.querySelectorAll(
+        ".control-view"
+      );
+
+
+    function openTool(tool){
+
+      toolButtons.forEach(
+        button => {
+
+          button.classList.toggle(
+            "active",
+            button.dataset.tool === tool
+          );
+
+        }
+      );
+
+
+      controlViews.forEach(
+        view => {
+
+          view.classList.toggle(
+            "active",
+            view.dataset.view === tool
+          );
+
+        }
+      );
+
+    }
+
+
+    toolButtons.forEach(
+      button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            openTool(
+              button.dataset.tool
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+    /* =====================================================
+       MOBILE TOOLS
+    ====================================================== */
+
+    document
+      .querySelectorAll(
+        "[data-mobile-tool]"
+      )
+      .forEach(
+        button => {
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              openTool(
+                button.dataset.mobileTool
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* =====================================================
+       CAMERA MODAL
+    ====================================================== */
+
+    const recordModal =
+      document.getElementById(
+        "recordModal"
+      );
+
+    const exportModal =
+      document.getElementById(
+        "exportModal"
+      );
+
+
+    const recordBtn =
+      document.getElementById(
+        "recordBtn"
+      );
+
+
+    const enableCameraBtn =
+      document.getElementById(
+        "enableCameraBtn"
+      );
+
+
+    const emptyEnableCamera =
+      document.getElementById(
+        "emptyEnableCamera"
+      );
+
+
+    const modalEnableCamera =
+      document.getElementById(
+        "modalEnableCamera"
+      );
+
+
+    const cameraEmpty =
+      document.getElementById(
+        "cameraEmpty"
+      );
+
+
+    function openRecordModal(){
+
+      recordModal.classList.add(
+        "show"
+      );
+
+    }
+
+
+    function closeRecordModal(){
+
+      recordModal.classList.remove(
+        "show"
+      );
+
+    }
+
+
+    enableCameraBtn.addEventListener(
+      "click",
+      openRecordModal
+    );
+
+
+    emptyEnableCamera.addEventListener(
+      "click",
+      openRecordModal
+    );
+
+
+    recordBtn.addEventListener(
+      "click",
+      openRecordModal
+    );
+
+
+    document
+      .getElementById(
+        "closeRecordModal"
+      )
+      .addEventListener(
+        "click",
+        closeRecordModal
+      );
+
+
+    document
+      .getElementById(
+        "modalCancel"
+      )
+      .addEventListener(
+        "click",
+        closeRecordModal
+      );
+
+
+    /* =====================================================
+       CAMERA ACCESS
+    ====================================================== */
+
+    let cameraStream = null;
+
+
+    async function enableCamera(){
+
+      try{
+
+        cameraStream =
+          await navigator.mediaDevices.getUserMedia(
+            {
+              video:true,
+              audio:true
+            }
+          );
+
+
+        cameraEmpty.classList.add(
+          "hidden"
+        );
+
+
+        closeRecordModal();
+
+
+        document
+          .querySelector(
+            ".camera-status"
+          )
+          .classList.add(
+            "camera-active"
+          );
+
+
+        const saveStatus =
+          document.querySelector(
+            ".save-status"
+          );
+
+
+        if(saveStatus){
+
+          saveStatus.innerHTML =
+            '<span class="save-dot"></span> Camera connected';
+
+        }
+
+
+      }catch(error){
+
+        alert(
+          "Camera or microphone permission was not granted."
+        );
+
+      }
+
+    }
+
+
+    modalEnableCamera.addEventListener(
+      "click",
+      enableCamera
+    );
+
+
+    /* =====================================================
+       EXPORT
+    ====================================================== */
+
+    document
+      .getElementById(
+        "exportBtn"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          exportModal.classList.add(
+            "show"
+          );
+
+        }
+      );
+
+
+    document
+      .getElementById(
+        "previewBtn"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          alert(
+            "Preview mode will open here."
+          );
+
+        }
+      );
+
+
+    document
+      .getElementById(
+        "closeExportModal"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          exportModal.classList.remove(
+            "show"
+          );
+
+        }
+      );
+
+
+    document
+      .getElementById(
+        "startExportBtn"
+      )
+      .addEventListener(
+        "click",
+        () => {
+
+          const progress =
+            document.getElementById(
+              "exportProgress"
+            );
+
+
+          progress.classList.add(
+            "active"
+          );
+
+
+          setTimeout(
+            () => {
+
+              progress.classList.remove(
+                "active"
+              );
+
+              alert(
+                "Export workflow ready. Video rendering engine will be connected in the next step."
+              );
+
+            },
+            1800
+          );
+
+        }
+      );
+
+
+    /* =====================================================
+       BACKGROUND SELECTION
+    ====================================================== */
+
+    document
+      .querySelectorAll(
+        ".background-card"
+      )
+      .forEach(
+        card => {
+
+          card.addEventListener(
+            "click",
+            () => {
+
+              document
+                .querySelectorAll(
+                  ".background-card"
+                )
+                .forEach(
+                  item =>
+                    item.classList.remove(
+                      "active"
+                    )
+                );
+
+
+              card.classList.add(
+                "active"
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* =====================================================
+       FORMAT SELECTION
+    ====================================================== */
+
+    document
+      .querySelectorAll(
+        ".format-card"
+      )
+      .forEach(
+        card => {
+
+          card.addEventListener(
+            "click",
+            () => {
+
+              document
+                .querySelectorAll(
+                  ".format-card"
+                )
+                .forEach(
+                  item =>
+                    item.classList.remove(
+                      "active"
+                    )
+                );
+
+
+              card.classList.add(
+                "active"
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* =====================================================
+       LOOK SELECTION
+    ====================================================== */
+
+    document
+      .querySelectorAll(
+        ".look-card"
+      )
+      .forEach(
+        card => {
+
+          card.addEventListener(
+            "click",
+            () => {
+
+              document
+                .querySelectorAll(
+                  ".look-card"
+                )
+                .forEach(
+                  item =>
+                    item.classList.remove(
+                      "active"
+                    )
+                );
+
+
+              card.classList.add(
+                "active"
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* =====================================================
+       LIGHT PRESETS
+    ====================================================== */
+
+    document
+      .querySelectorAll(
+        ".preset"
+      )
+      .forEach(
+        preset => {
+
+          preset.addEventListener(
+            "click",
+            () => {
+
+              document
+                .querySelectorAll(
+                  ".preset"
+                )
+                .forEach(
+                  item =>
+                    item.classList.remove(
+                      "active"
+                    )
+                );
+
+
+              preset.classList.add(
+                "active"
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* =====================================================
+       TEXT / ANIMATION
+    ====================================================== */
+
+    document
+      .querySelectorAll(
+        ".animation-card"
+      )
+      .forEach(
+        card => {
+
+          card.addEventListener(
+            "click",
+            () => {
+
+              document
+                .querySelectorAll(
+                  ".animation-card"
+                )
+                .forEach(
+                  item =>
+                    item.classList.remove(
+                      "active"
+                    )
+                );
+
+
+              card.classList.add(
+                "active"
+              );
+
+            }
+          );
+
+        }
+      );
+
+
+    /* =====================================================
+       TELEPROMPTER SIZE
+    ====================================================== */
+
+    const teleprompterSize =
+      document.getElementById(
+        "teleprompterSize"
+      );
+
+
+    if(teleprompterSize){
+
+      teleprompterSize.addEventListener(
+        "input",
+        () => {
+
+          const value =
+            teleprompterSize.value;
+
+          const strong =
+            teleprompterSize
+              .closest(
+                ".range-control"
+              )
+              .querySelector(
+                "strong"
+              );
+
+
+          if(strong){
+
+            strong.textContent =
+              value + "px";
+
+          }
+
+        }
+      );
+
+    }
+
+
+    /* =====================================================
+       RECORD BUTTON VISUAL STATE
+    ====================================================== */
+
+    let recording = false;
+
+    let recordSeconds = 0;
+
+    let recordTimer = null;
+
+
+    function updateRecordTime(){
+
+      recordSeconds++;
+
+      const hours =
+        Math.floor(
+          recordSeconds / 3600
+        )
+        .toString()
+        .padStart(2,"0");
+
+
+      const minutes =
+        Math.floor(
+          (recordSeconds % 3600) / 60
+        )
+        .toString()
+        .padStart(2,"0");
+
+
+      const seconds =
+        (recordSeconds % 60)
+        .toString()
+        .padStart(2,"0");
+
+
+      const time =
+        `${hours}:${minutes}:${seconds}`;
+
+
+      const recordIndicator =
+        document.getElementById(
+          "recordIndicator"
+        );
+
+
+      if(recordIndicator){
+
+        recordIndicator
+          .querySelector(
+            "strong"
+          )
+          .textContent =
+          time;
+
+      }
+
+    }
+
+
+    recordBtn.addEventListener(
+      "dblclick",
+      () => {
+
+        if(!recording){
+
+          recording = true;
+
+          recordBtn.classList.add(
+            "recording"
+          );
+
+          document
+            .getElementById(
+              "recordIndicator"
+            )
+            .classList.add(
+              "active"
+            );
+
+
+          recordTimer =
+            setInterval(
+              updateRecordTime,
+              1000
+            );
+
+        }else{
+
+          recording = false;
+
+          recordBtn.classList.remove(
+            "recording"
+          );
+
+          document
+            .getElementById(
+              "recordIndicator"
+            )
+            .classList.remove(
+              "active"
+            );
+
+
+          clearInterval(
+            recordTimer
+          );
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       SCRIPT STORAGE
+    ====================================================== */
+
+    const scriptEditor =
+      document.getElementById(
+        "scriptEditor"
+      );
+
+
+    if(scriptEditor){
+
+      scriptEditor.addEventListener(
+        "input",
+        () => {
+
+          localStorage.setItem(
+            "snk-ad-script",
+            scriptEditor.value
+          );
+
+        }
+      );
+
+
+      const savedScript =
+        localStorage.getItem(
+          "snk-ad-script"
+        );
+
+
+      if(savedScript){
+
+        scriptEditor.value =
+          savedScript;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       ESCAPE KEY
+    ====================================================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if(event.key === "Escape"){
+
+          recordModal.classList.remove(
+            "show"
+          );
+
+          exportModal.classList.remove(
+            "show"
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
+
+</div>
+
+</body>
+</html>
