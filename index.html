@@ -3,972 +3,1620 @@
 <head>
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <title>SNK Ad Studio — Create. Animate. Publish.</title>
+  <title>
+    SNK Ad Studio — Your Virtual Production Studio
+  </title>
 
   <meta
     name="description"
-    content="SNK Ad Studio — Create premium promotional videos, animated ads and social media content faster."
+    content="Turn any room into a virtual production studio. Record, light, style, animate and create professional ads directly from your browser."
   >
 
-  <meta name="theme-color" content="#0b0d10">
+  <meta
+    name="theme-color"
+    content="#08090c"
+  >
 
-  <link rel="icon" type="image/svg+xml"
-        href="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg">
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
 
 <body>
 
+<div class="app">
+
   <!-- =====================================================
-       APP
+       TOP NAV
   ====================================================== -->
 
-  <div class="app">
+  <header class="topbar">
 
-    <!-- ===================================================
-         TOP NAV
-    ==================================================== -->
+    <a
+      href="#"
+      class="brand"
+      aria-label="SNK Ad Studio Home"
+    >
 
-    <header class="topbar">
-
-      <a href="#" class="brand">
-
-        <div class="brand-logo">
-          <img
-            src="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
-            alt="SNK"
-          >
-        </div>
-
-        <div class="brand-text">
-          <strong>SNK</strong>
-          <span>Ad Studio</span>
-        </div>
-
-      </a>
-
-
-      <nav class="main-nav">
-
-        <a href="#features">Features</a>
-        <a href="#templates">Templates</a>
-        <a href="#workflow">Workflow</a>
-
-      </nav>
-
-
-      <div class="top-actions">
-
-        <button
-          class="icon-btn"
-          id="themeToggle"
-          aria-label="Toggle theme"
-          title="Toggle theme"
+      <div class="brand-logo">
+        <img
+          src="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
+          alt="SNK"
         >
-          ◐
-        </button>
+      </div>
 
-        <a href="#studio" class="login-link">
-          Open Studio
-        </a>
+      <div class="brand-text">
 
-        <a href="#studio" class="primary-btn small">
-          Create Ad
-        </a>
+        <strong>SNK</strong>
+
+        <span>
+          Ad Studio
+        </span>
 
       </div>
 
-    </header>
+    </a>
 
 
-    <!-- ===================================================
-         HERO
-    ==================================================== -->
+    <nav class="main-nav">
 
-    <main>
+      <a href="#production">
+        Production
+      </a>
 
-      <section class="hero">
+      <a href="#features">
+        Features
+      </a>
 
-        <div class="hero-content">
+      <a href="#templates">
+        Templates
+      </a>
 
-          <div class="eyebrow">
-            <span class="status-dot"></span>
-            Built for SNK IT Institute
-          </div>
+      <a href="#workflow">
+        Workflow
+      </a>
 
-
-          <h1>
-            Create
-            <span class="gradient-text">premium ads</span>
-            without rebuilding everything.
-          </h1>
+    </nav>
 
 
-          <p class="hero-description">
-            Turn your script, camera recording, images and ideas into
-            polished promotional videos with reusable templates,
-            animated typography and SNK branding.
-          </p>
+    <div class="top-actions">
+
+      <button
+        class="icon-btn"
+        id="themeToggle"
+        aria-label="Toggle theme"
+        title="Toggle theme"
+      >
+        ◐
+      </button>
+
+      <a
+        href="studio.html"
+        class="login-link"
+      >
+        Open Studio
+      </a>
+
+      <a
+        href="studio.html"
+        class="primary-btn small"
+      >
+        Create Production
+      </a>
+
+    </div>
+
+  </header>
 
 
-          <div class="hero-actions">
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
 
-            <a href="#studio" class="primary-btn">
-              Create Your First Ad
-              <span>→</span>
-            </a>
+  <main>
 
-            <a href="#templates" class="secondary-btn">
-              Explore Templates
-            </a>
+    <section class="hero">
 
-          </div>
+      <div class="hero-content">
 
+        <div class="eyebrow">
 
-          <div class="hero-note">
+          <span class="status-dot"></span>
 
-            <span>✓</span>
-            Camera recording
-            <span>✓</span>
-            Text animation
-            <span>✓</span>
-            SNK brand presets
-
-          </div>
+          VIRTUAL PRODUCTION STUDIO
 
         </div>
 
 
-        <!-- HERO PREVIEW -->
+        <h1>
 
-        <div class="hero-preview">
+          Turn any room into a
 
-          <div class="window">
+          <span class="gradient-text">
+            production studio.
+          </span>
 
-            <div class="window-top">
+        </h1>
 
-              <div class="window-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
 
-              <div class="window-title">
-                SNK Ad Studio
-              </div>
+        <p class="hero-description">
 
-              <div class="window-status">
-                ● Live Preview
-              </div>
+          No expensive studio.
+          No complicated lighting setup.
+          No production team.
+
+          Record yourself, transform your background,
+          shape your lighting, add cinematic graphics
+          and create professional ads directly from your browser.
+
+        </p>
+
+
+        <div class="hero-actions">
+
+          <a
+            href="studio.html"
+            class="primary-btn hero-btn"
+          >
+
+            Create Your First Production
+
+            <span>
+              →
+            </span>
+
+          </a>
+
+
+          <a
+            href="#production"
+            class="secondary-btn"
+          >
+
+            Explore Virtual Studio
+
+          </a>
+
+        </div>
+
+
+        <div class="hero-note">
+
+          <span>✓</span>
+          Camera
+
+          <span>✓</span>
+          Virtual Background
+
+          <span>✓</span>
+          Lighting
+
+          <span>✓</span>
+          Teleprompter
+
+          <span>✓</span>
+          Graphics
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           HERO STUDIO PREVIEW
+      ================================================== -->
+
+      <div class="hero-preview">
+
+        <div class="studio-window">
+
+          <div class="window-top">
+
+            <div class="window-dots">
+
+              <span></span>
+              <span></span>
+              <span></span>
 
             </div>
 
 
-            <div class="preview-body">
+            <div class="window-title">
 
-              <aside class="preview-sidebar">
+              SNK Virtual Production Studio
 
-                <div class="side-item active">
-                  <span>✦</span>
-                  Templates
-                </div>
+            </div>
 
-                <div class="side-item">
-                  <span>T</span>
-                  Text
-                </div>
 
-                <div class="side-item">
-                  <span>▣</span>
-                  Media
-                </div>
+            <div class="window-live">
 
-                <div class="side-item">
-                  <span>◈</span>
-                  Animation
-                </div>
+              <span></span>
 
-                <div class="side-item">
-                  <span>♫</span>
+              LIVE PREVIEW
+
+            </div>
+
+          </div>
+
+
+          <div class="studio-interface">
+
+
+            <!-- LEFT SIDEBAR -->
+
+            <aside class="studio-sidebar">
+
+              <div class="studio-side-title">
+                PRODUCTION
+              </div>
+
+
+              <div class="studio-tool active">
+
+                <span class="tool-icon">
+                  🎥
+                </span>
+
+                <span>
+                  Camera
+                </span>
+
+              </div>
+
+
+              <div class="studio-tool">
+
+                <span class="tool-icon">
+                  🏠
+                </span>
+
+                <span>
+                  Background
+                </span>
+
+              </div>
+
+
+              <div class="studio-tool">
+
+                <span class="tool-icon">
+                  💡
+                </span>
+
+                <span>
+                  Lighting
+                </span>
+
+              </div>
+
+
+              <div class="studio-tool">
+
+                <span class="tool-icon">
+                  ✨
+                </span>
+
+                <span>
+                  Look
+                </span>
+
+              </div>
+
+
+              <div class="studio-tool">
+
+                <span class="tool-icon">
+                  📝
+                </span>
+
+                <span>
+                  Script
+                </span>
+
+              </div>
+
+
+              <div class="studio-tool">
+
+                <span class="tool-icon">
+                  🎨
+                </span>
+
+                <span>
+                  Graphics
+                </span>
+
+              </div>
+
+
+              <div class="studio-tool">
+
+                <span class="tool-icon">
+                  🎙
+                </span>
+
+                <span>
                   Audio
-                </div>
+                </span>
 
-                <div class="side-item">
-                  <span>◆</span>
-                  Brand
-                </div>
+              </div>
 
-              </aside>
+            </aside>
 
 
-              <div class="preview-center">
+            <!-- CENTER -->
 
-                <div class="video-canvas">
+            <div class="studio-center">
 
-                  <div class="canvas-gradient"></div>
+              <div class="canvas-toolbar">
 
-                  <div class="canvas-content">
+                <span>
+                  Presenter • 9:16
+                </span>
 
-                    <span class="canvas-small">
+                <span>
+                  1080 × 1920
+                </span>
+
+              </div>
+
+
+              <div class="production-canvas">
+
+                <div class="virtual-room">
+
+                  <div class="room-light one"></div>
+                  <div class="room-light two"></div>
+
+                  <div class="room-grid"></div>
+
+
+                  <div class="camera-person">
+
+                    <div class="person-head"></div>
+
+                    <div class="person-body"></div>
+
+                  </div>
+
+
+                  <div class="floating-copy">
+
+                    <span>
                       SNK IT INSTITUTE
                     </span>
 
-                    <h3>
-                      Build Skills.<br>
-                      Build Your Future.
-                    </h3>
+                    <strong>
+                      Learn.<br>
+                      Build.<br>
+                      Grow.
+                    </strong>
 
-                    <div class="canvas-line"></div>
+                    <small>
+                      ADMISSION OPEN
+                    </small>
 
-                    <span class="canvas-cta">
-                      ENROLL NOW →
+                  </div>
+
+
+                  <div class="camera-frame">
+
+                    <span class="frame-corner tl"></span>
+                    <span class="frame-corner tr"></span>
+                    <span class="frame-corner bl"></span>
+                    <span class="frame-corner br"></span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <div class="preview-controls">
+
+                <button>
+                  ◀
+                </button>
+
+                <button class="record-button">
+
+                  <span></span>
+
+                  RECORD
+
+                </button>
+
+                <button>
+                  ▶
+                </button>
+
+              </div>
+
+
+              <div class="mini-timeline">
+
+                <div class="timeline-time">
+                  00:00
+                </div>
+
+                <div class="timeline-area">
+
+                  <div class="timeline-row">
+
+                    <span>
+                      CAMERA
                     </span>
 
+                    <div class="timeline-track">
+                      <div class="track-camera"></div>
+                    </div>
+
                   </div>
 
-                </div>
 
+                  <div class="timeline-row">
 
-                <div class="mini-timeline">
-
-                  <div class="timeline-label">
-                    00:00
-                  </div>
-
-                  <div class="timeline-track">
-
-                    <div class="timeline-block text-block">
+                    <span>
                       TEXT
+                    </span>
+
+                    <div class="timeline-track">
+                      <div class="track-text"></div>
                     </div>
 
-                    <div class="timeline-block media-block">
-                      MEDIA
-                    </div>
+                  </div>
 
-                    <div class="timeline-block audio-block">
+
+                  <div class="timeline-row">
+
+                    <span>
                       MUSIC
+                    </span>
+
+                    <div class="timeline-track">
+                      <div class="track-audio"></div>
                     </div>
 
                   </div>
 
-                  <div class="timeline-label">
-                    00:15
-                  </div>
+                </div>
+
+                <div class="timeline-time">
+                  00:30
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- RIGHT INSPECTOR -->
+
+            <aside class="studio-inspector">
+
+              <div class="inspector-header">
+
+                <span>
+                  CAMERA
+                </span>
+
+                <button>
+                  ⋯
+                </button>
+
+              </div>
+
+
+              <div class="fake-control">
+
+                <label>
+                  Camera
+                </label>
+
+                <div>
+                  Built-in Camera
+                  <span>
+                    ▾
+                  </span>
+                </div>
+
+              </div>
+
+
+              <div class="fake-control">
+
+                <label>
+                  Framing
+                </label>
+
+                <div>
+                  Portrait
+                  <span>
+                    ▾
+                  </span>
+                </div>
+
+              </div>
+
+
+              <div class="fake-control">
+
+                <label>
+                  Lighting
+                </label>
+
+                <div class="slider">
+
+                  <span></span>
 
                 </div>
 
               </div>
 
 
-              <aside class="preview-inspector">
+              <div class="fake-control">
 
-                <div class="inspector-title">
-                  Text
-                </div>
+                <label>
+                  Skin / Face
+                </label>
 
-                <div class="fake-input">
-                  Build Skills.
-                </div>
+                <div class="slider">
 
-                <div class="fake-input">
-                  Inter / Bold
-                </div>
-
-                <div class="fake-row">
-
-                  <span>Animation</span>
-
-                  <strong>Word Reveal</strong>
+                  <span></span>
 
                 </div>
 
-                <div class="fake-row">
+              </div>
 
-                  <span>Duration</span>
 
-                  <strong>0.80s</strong>
+              <div class="fake-control">
+
+                <label>
+                  Background
+                </label>
+
+                <div class="background-choice">
+
+                  <span></span>
+
+                  Modern Studio
 
                 </div>
 
-                <div class="fake-row">
+              </div>
 
-                  <span>Color</span>
 
-                  <strong>SNK Gold</strong>
+              <div class="fake-control">
+
+                <label>
+                  Look
+                </label>
+
+                <div class="look-pills">
+
+                  <span class="selected">
+                    Clean
+                  </span>
+
+                  <span>
+                    Cinema
+                  </span>
+
+                  <span>
+                    Warm
+                  </span>
 
                 </div>
 
-              </aside>
+              </div>
 
-            </div>
+            </aside>
 
           </div>
 
         </div>
 
-      </section>
+      </div>
+
+    </section>
 
 
-      <!-- =================================================
-           STUDIO QUICK START
-      ================================================== -->
+    <!-- =====================================================
+         PRODUCTION PROMISE
+    ====================================================== -->
 
-      <section class="studio-section" id="studio">
+    <section
+      class="production-section"
+      id="production"
+    >
 
-        <div class="section-heading">
+      <div class="section-heading centered">
 
-          <div>
+        <span class="section-label">
+          YOUR VIRTUAL STUDIO
+        </span>
 
-            <span class="section-label">
-              QUICK START
-            </span>
+        <h2>
+          Everything a small production team needs.
+        </h2>
 
-            <h2>
-              What do you want to create?
-            </h2>
+        <p>
+          Replace expensive studio equipment with a browser-based
+          production workflow designed for creators, teachers,
+          businesses and local brands.
+        </p>
 
+      </div>
+
+
+      <div class="production-grid">
+
+
+        <article class="production-card">
+
+          <div class="production-card-number">
+            01
           </div>
+
+          <div class="production-icon">
+            🎥
+          </div>
+
+          <h3>
+            Camera Studio
+          </h3>
 
           <p>
-            Start with a ready-made workflow and customize it
-            for your next SNK campaign.
+            Use your laptop, desktop or connected camera
+            to record presenter videos directly inside the studio.
           </p>
 
-        </div>
-
-
-        <div class="quick-grid">
-
-
-          <button class="quick-card">
-
-            <div class="quick-icon">
-              🎬
-            </div>
-
-            <div>
-              <h3>New Ad</h3>
-
-              <p>
-                Start a promotional video from scratch.
-              </p>
-            </div>
-
-            <span class="quick-arrow">→</span>
-
-          </button>
-
-
-          <button class="quick-card">
-
-            <div class="quick-icon">
-              🎥
-            </div>
-
-            <div>
-              <h3>Presenter Video</h3>
-
-              <p>
-                Record yourself directly with your camera.
-              </p>
-            </div>
-
-            <span class="quick-arrow">→</span>
-
-          </button>
-
-
-          <button class="quick-card">
-
-            <div class="quick-icon">
-              ✨
-            </div>
-
-            <div>
-              <h3>Animated Text</h3>
-
-              <p>
-                Create kinetic typography quickly.
-              </p>
-            </div>
-
-            <span class="quick-arrow">→</span>
-
-          </button>
-
-
-          <button class="quick-card">
-
-            <div class="quick-icon">
-              📱
-            </div>
-
-            <div>
-              <h3>Social Ad</h3>
-
-              <p>
-                Create a Reel, Short or social promotion.
-              </p>
-            </div>
-
-            <span class="quick-arrow">→</span>
-
-          </button>
-
-
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           FEATURES
-      ================================================== -->
-
-      <section class="features-section" id="features">
-
-        <div class="section-heading centered">
-
-          <span class="section-label">
-            ONE STUDIO
-          </span>
-
-          <h2>
-            Everything you repeat in Premiere,
-            made faster.
-          </h2>
-
-          <p>
-            SNK Ad Studio focuses on the repetitive production
-            work that slows down everyday advertising.
-          </p>
-
-        </div>
-
-
-        <div class="feature-grid">
-
-
-          <article class="feature-card large">
-
-            <div class="feature-number">
-              01
-            </div>
-
-            <div class="feature-icon">
-              ✨
-            </div>
-
-            <h3>
-              Animated Typography
-            </h3>
-
-            <p>
-              Apply professional text animations without manually
-              rebuilding keyframes every time.
-            </p>
-
-            <div class="feature-tags">
-
-              <span>Word Reveal</span>
-              <span>Typewriter</span>
-              <span>Mask</span>
-              <span>Glitch</span>
-
-            </div>
-
-          </article>
-
-
-          <article class="feature-card">
-
-            <div class="feature-number">
-              02
-            </div>
-
-            <div class="feature-icon">
-              🎥
-            </div>
-
-            <h3>
-              Presenter Mode
-            </h3>
-
-            <p>
-              Record your face and voice directly from your browser.
-            </p>
-
-          </article>
-
-
-          <article class="feature-card">
-
-            <div class="feature-number">
-              03
-            </div>
-
-            <div class="feature-icon">
-              🎨
-            </div>
-
-            <h3>
-              SNK Brand Kit
-            </h3>
-
-            <p>
-              Logo, colors, fonts and CTA styles ready for every project.
-            </p>
-
-          </article>
-
-
-          <article class="feature-card">
-
-            <div class="feature-number">
-              04
-            </div>
-
-            <div class="feature-icon">
-              📐
-            </div>
-
-            <h3>
-              Any Format
-            </h3>
-
-            <p>
-              Build for Reels, Shorts, Instagram, Facebook or YouTube.
-            </p>
-
-          </article>
-
-
-          <article class="feature-card">
-
-            <div class="feature-number">
-              05
-            </div>
-
-            <div class="feature-icon">
-              ⚡
-            </div>
-
-            <h3>
-              Reusable Templates
-            </h3>
-
-            <p>
-              Save successful ad structures and reuse them in seconds.
-            </p>
-
-          </article>
-
-
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           TEMPLATES
-      ================================================== -->
-
-      <section class="templates-section" id="templates">
-
-        <div class="section-heading">
-
-          <div>
-
-            <span class="section-label">
-              TEMPLATES
-            </span>
-
-            <h2>
-              Start with a proven structure.
-            </h2>
-
+          <div class="production-meta">
+            Camera · Mic · Framing
           </div>
 
-          <a href="#studio" class="text-link">
-            View all templates →
-          </a>
+        </article>
 
-        </div>
 
+        <article class="production-card featured">
 
-        <div class="template-grid">
+          <div class="production-card-number">
+            02
+          </div>
 
+          <div class="production-icon">
+            🏠
+          </div>
 
-          <article class="template-card">
+          <h3>
+            Virtual Background
+          </h3>
 
-            <div class="template-preview admission">
+          <p>
+            Turn an ordinary room into a modern office,
+            classroom, studio or branded production environment.
+          </p>
 
-              <span>
-                ADMISSION
-              </span>
+          <div class="production-meta">
+            Studio · Office · Classroom
+          </div>
 
-              <strong>
-                OPEN
-              </strong>
+        </article>
 
-              <small>
-                NEW BATCH STARTING
-              </small>
 
-            </div>
+        <article class="production-card">
 
-            <div class="template-info">
+          <div class="production-card-number">
+            03
+          </div>
 
-              <div>
-                <h3>Admission Open</h3>
-                <p>15 sec · 9:16</p>
-              </div>
+          <div class="production-icon">
+            💡
+          </div>
 
-              <button>
-                Use →
-              </button>
+          <h3>
+            Virtual Lighting
+          </h3>
 
-            </div>
+          <p>
+            Shape the visual mood with digital brightness,
+            contrast, warmth and face-light controls.
+          </p>
 
-          </article>
+          <div class="production-meta">
+            Key · Fill · Rim · Glow
+          </div>
 
+        </article>
 
-          <article class="template-card">
 
-            <div class="template-preview course">
+        <article class="production-card">
 
-              <span>
-                MASTER
-              </span>
+          <div class="production-card-number">
+            04
+          </div>
 
-              <strong>
-                UI/UX DESIGN
-              </strong>
+          <div class="production-icon">
+            💄
+          </div>
 
-              <small>
-                BUILD REAL SKILLS
-              </small>
+          <h3>
+            Presenter Look
+          </h3>
 
-            </div>
+          <p>
+            Apply subtle professional image adjustments
+            for a cleaner, brighter and more polished appearance.
+          </p>
 
-            <div class="template-info">
+          <div class="production-meta">
+            Skin · Face · Sharpness
+          </div>
 
-              <div>
-                <h3>Course Promotion</h3>
-                <p>20 sec · 9:16</p>
-              </div>
+        </article>
 
-              <button>
-                Use →
-              </button>
 
-            </div>
+        <article class="production-card">
 
-          </article>
+          <div class="production-card-number">
+            05
+          </div>
 
+          <div class="production-icon">
+            📝
+          </div>
 
-          <article class="template-card">
+          <h3>
+            Teleprompter
+          </h3>
 
-            <div class="template-preview offer">
+          <p>
+            Read your script while recording so you can
+            speak naturally without memorizing every line.
+          </p>
 
-              <span>
-                SPECIAL
-              </span>
+          <div class="production-meta">
+            Script · Scroll · Mirror
+          </div>
 
-              <strong>
-                OFFER
-              </strong>
+        </article>
 
-              <small>
-                LIMITED TIME
-              </small>
 
-            </div>
+        <article class="production-card">
 
-            <div class="template-info">
+          <div class="production-card-number">
+            06
+          </div>
 
-              <div>
-                <h3>Special Offer</h3>
-                <p>12 sec · 1:1</p>
-              </div>
+          <div class="production-icon">
+            ✨
+          </div>
 
-              <button>
-                Use →
-              </button>
+          <h3>
+            Production Graphics
+          </h3>
 
-            </div>
+          <p>
+            Add lower thirds, titles, offers, CTAs,
+            animated typography and branded overlays.
+          </p>
 
-          </article>
+          <div class="production-meta">
+            Text · Motion · Branding
+          </div>
 
+        </article>
 
-          <article class="template-card">
 
-            <div class="template-preview presenter">
+      </div>
 
-              <span>
-                TALK TO
-              </span>
+    </section>
 
-              <strong>
-                YOUR CAMERA
-              </strong>
 
-              <small>
-                PRESENTER MODE
-              </small>
+    <!-- =====================================================
+         WHY SNK
+    ====================================================== -->
 
-            </div>
+    <section class="why-section">
 
-            <div class="template-info">
+      <div class="why-content">
 
-              <div>
-                <h3>Presenter Ad</h3>
-                <p>30 sec · 9:16</p>
-              </div>
+        <span class="section-label">
+          THE IDEA
+        </span>
 
-              <button>
-                Use →
-              </button>
+        <h2>
+          You don't need a bigger studio.
+          You need a smarter one.
+        </h2>
 
-            </div>
+        <p>
+          Your room does not need to look like a production studio.
+          SNK Ad Studio gives you the tools to control the visual
+          environment digitally and turn a simple recording into
+          a polished production.
+        </p>
 
-          </article>
 
+        <div class="why-points">
 
-        </div>
-
-      </section>
-
-
-      <!-- =================================================
-           WORKFLOW
-      ================================================== -->
-
-      <section class="workflow-section" id="workflow">
-
-        <div class="section-heading centered">
-
-          <span class="section-label">
-            WORKFLOW
-          </span>
-
-          <h2>
-            From idea to finished ad.
-          </h2>
-
-        </div>
-
-
-        <div class="workflow">
-
-          <div class="workflow-line"></div>
-
-
-          <div class="workflow-step">
-
+          <div>
             <span>01</span>
-
-            <div>
-              <h3>Choose</h3>
-
-              <p>
-                Pick a template or start from scratch.
-              </p>
-            </div>
-
+            <strong>
+              Record
+            </strong>
+            <p>
+              Use the camera you already have.
+            </p>
           </div>
 
 
-          <div class="workflow-step">
-
+          <div>
             <span>02</span>
-
-            <div>
-              <h3>Create</h3>
-
-              <p>
-                Add your text, media or camera recording.
-              </p>
-            </div>
-
+            <strong>
+              Transform
+            </strong>
+            <p>
+              Shape your background and visual look.
+            </p>
           </div>
 
 
-          <div class="workflow-step">
-
+          <div>
             <span>03</span>
-
-            <div>
-              <h3>Animate</h3>
-
-              <p>
-                Apply ready-made animation presets.
-              </p>
-            </div>
-
+            <strong>
+              Produce
+            </strong>
+            <p>
+              Add graphics, audio and animation.
+            </p>
           </div>
-
-
-          <div class="workflow-step">
-
-            <span>04</span>
-
-            <div>
-              <h3>Brand</h3>
-
-              <p>
-                Apply your SNK brand kit automatically.
-              </p>
-            </div>
-
-          </div>
-
-
-          <div class="workflow-step">
-
-            <span>05</span>
-
-            <div>
-              <h3>Export</h3>
-
-              <p>
-                Preview and export your final video.
-              </p>
-            </div>
-
-          </div>
-
 
         </div>
 
-      </section>
+      </div>
 
 
-      <!-- =================================================
-           CTA
-      ================================================== -->
+      <div class="why-visual">
 
-      <section class="cta-section">
+        <div class="before-after">
 
-        <div class="cta-box">
+          <div class="before-panel">
 
-          <div class="cta-glow"></div>
+            <span>
+              BEFORE
+            </span>
 
-          <span class="section-label">
-            SNK AD STUDIO
-          </span>
+            <div class="room-placeholder">
 
-          <h2>
-            Stop rebuilding the same animation.
-          </h2>
+              <div class="chair"></div>
+
+              <div class="person-placeholder"></div>
+
+            </div>
+
+          </div>
+
+
+          <div class="after-panel">
+
+            <span>
+              AFTER
+            </span>
+
+            <div class="virtual-placeholder">
+
+              <div class="virtual-glow"></div>
+
+              <strong>
+                SNK
+              </strong>
+
+              <small>
+                VIRTUAL STUDIO
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="comparison-line"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FEATURES
+    ====================================================== -->
+
+    <section
+      class="features-section"
+      id="features"
+    >
+
+      <div class="section-heading centered">
+
+        <span class="section-label">
+          ONE STUDIO
+        </span>
+
+        <h2>
+          Production tools without production overhead.
+        </h2>
+
+        <p>
+          Everything you repeatedly need for professional
+          promotional content, organized in one workspace.
+        </p>
+
+      </div>
+
+
+      <div class="feature-grid">
+
+
+        <article class="feature-card large">
+
+          <div class="feature-number">
+            01
+          </div>
+
+          <div class="feature-icon">
+            🎬
+          </div>
+
+          <h3>
+            Cinematic Production
+          </h3>
 
           <p>
-            Build your ad once. Save the structure.
-            Reuse it whenever you need it.
+            Build a complete visual composition around your
+            camera recording instead of relying on the room
+            behind you.
           </p>
 
-          <a href="#studio" class="primary-btn">
-            Start Creating
-            <span>→</span>
-          </a>
+          <div class="feature-tags">
 
-        </div>
+            <span>
+              Virtual Set
+            </span>
 
-      </section>
+            <span>
+              Lighting
+            </span>
 
-    </main>
+            <span>
+              Camera
+            </span>
+
+            <span>
+              Graphics
+            </span>
+
+          </div>
+
+        </article>
 
 
-    <!-- ===================================================
-         FOOTER
-    ==================================================== -->
+        <article class="feature-card">
 
-    <footer class="footer">
+          <div class="feature-number">
+            02
+          </div>
 
-      <div class="footer-brand">
+          <div class="feature-icon">
+            ✨
+          </div>
 
-        <div class="brand-logo small-logo">
+          <h3>
+            Animated Typography
+          </h3>
 
-          <img
-            src="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
-            alt="SNK"
-          >
+          <p>
+            Create kinetic titles and promotional messages
+            without manually rebuilding every animation.
+          </p>
 
-        </div>
+        </article>
+
+
+        <article class="feature-card">
+
+          <div class="feature-number">
+            03
+          </div>
+
+          <div class="feature-icon">
+            🎨
+          </div>
+
+          <h3>
+            Brand Kit
+          </h3>
+
+          <p>
+            Keep your logo, colors, fonts, CTA styles and
+            visual identity ready for every production.
+          </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+          <div class="feature-number">
+            04
+          </div>
+
+          <div class="feature-icon">
+            📱
+          </div>
+
+          <h3>
+            Every Format
+          </h3>
+
+          <p>
+            Create content for Reels, Shorts, Facebook,
+            Instagram, YouTube and traditional landscape video.
+          </p>
+
+        </article>
+
+
+        <article class="feature-card">
+
+          <div class="feature-number">
+            05
+          </div>
+
+          <div class="feature-icon">
+            ⚡
+          </div>
+
+          <h3>
+            Reusable Productions
+          </h3>
+
+          <p>
+            Save your successful setup and reuse the structure
+            for your next campaign.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TEMPLATES
+    ====================================================== -->
+
+    <section
+      class="templates-section"
+      id="templates"
+    >
+
+      <div class="section-heading">
 
         <div>
 
-          <strong>SNK Ad Studio</strong>
-
-          <span>
-            A production tool by SNK.
+          <span class="section-label">
+            PRODUCTION TEMPLATES
           </span>
+
+          <h2>
+            Start with a production-ready setup.
+          </h2>
 
         </div>
 
-      </div>
 
-
-      <div class="footer-right">
-
-        <span>
-          Built for faster creative production.
-        </span>
-
-        <span>
-          © 2026 SNK
-        </span>
+        <a
+          href="studio.html"
+          class="text-link"
+        >
+          Open Studio →
+        </a>
 
       </div>
 
-    </footer>
 
-  </div>
+      <div class="template-grid">
+
+
+        <article class="template-card">
+
+          <div class="template-preview admission">
+
+            <span>
+              ADMISSION
+            </span>
+
+            <strong>
+              OPEN
+            </strong>
+
+            <small>
+              NEW BATCH STARTING
+            </small>
+
+          </div>
+
+
+          <div class="template-info">
+
+            <div>
+
+              <h3>
+                Admission Campaign
+              </h3>
+
+              <p>
+                Presenter · 15 sec · 9:16
+              </p>
+
+            </div>
+
+            <a href="studio.html">
+              Use →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="template-card">
+
+          <div class="template-preview course">
+
+            <span>
+              MASTER
+            </span>
+
+            <strong>
+              UI/UX DESIGN
+            </strong>
+
+            <small>
+              BUILD REAL SKILLS
+            </small>
+
+          </div>
+
+
+          <div class="template-info">
+
+            <div>
+
+              <h3>
+                Course Promotion
+              </h3>
+
+              <p>
+                Presenter · 20 sec · 9:16
+              </p>
+
+            </div>
+
+            <a href="studio.html">
+              Use →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="template-card">
+
+          <div class="template-preview offer">
+
+            <span>
+              SPECIAL
+            </span>
+
+            <strong>
+              OFFER
+            </strong>
+
+            <small>
+              LIMITED TIME
+            </small>
+
+          </div>
+
+
+          <div class="template-info">
+
+            <div>
+
+              <h3>
+                Special Offer
+              </h3>
+
+              <p>
+                Product · 12 sec · 1:1
+              </p>
+
+            </div>
+
+            <a href="studio.html">
+              Use →
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <article class="template-card">
+
+          <div class="template-preview presenter">
+
+            <span>
+              TALK TO
+            </span>
+
+            <strong>
+              YOUR CAMERA
+            </strong>
+
+            <small>
+              VIRTUAL PRESENTER
+            </small>
+
+          </div>
+
+
+          <div class="template-info">
+
+            <div>
+
+              <h3>
+                Presenter Studio
+              </h3>
+
+              <p>
+                Camera · 30 sec · 9:16
+              </p>
+
+            </div>
+
+            <a href="studio.html">
+              Use →
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WORKFLOW
+    ====================================================== -->
+
+    <section
+      class="workflow-section"
+      id="workflow"
+    >
+
+      <div class="section-heading centered">
+
+        <span class="section-label">
+          PRODUCTION WORKFLOW
+        </span>
+
+        <h2>
+          From empty room to finished production.
+        </h2>
+
+      </div>
+
+
+      <div class="workflow">
+
+        <div class="workflow-line"></div>
+
+
+        <div class="workflow-step">
+
+          <span>
+            01
+          </span>
+
+          <div>
+
+            <h3>
+              Record
+            </h3>
+
+            <p>
+              Turn on your camera and start speaking.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="workflow-step">
+
+          <span>
+            02
+          </span>
+
+          <div>
+
+            <h3>
+              Transform
+            </h3>
+
+            <p>
+              Replace the environment and shape the lighting.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="workflow-step">
+
+          <span>
+            03
+          </span>
+
+          <div>
+
+            <h3>
+              Direct
+            </h3>
+
+            <p>
+              Follow your script with the built-in teleprompter.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="workflow-step">
+
+          <span>
+            04
+          </span>
+
+          <div>
+
+            <h3>
+              Design
+            </h3>
+
+            <p>
+              Add typography, graphics, music and branding.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="workflow-step">
+
+          <span>
+            05
+          </span>
+
+          <div>
+
+            <h3>
+              Export
+            </h3>
+
+            <p>
+              Prepare the final production for your platform.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CTA
+    ====================================================== -->
+
+    <section class="cta-section">
+
+      <div class="cta-box">
+
+        <div class="cta-glow"></div>
+
+
+        <span class="section-label">
+          SNK AD STUDIO
+        </span>
+
+
+        <h2>
+          Your room is enough.
+          Your browser is the studio.
+        </h2>
+
+
+        <p>
+          Record your content, transform the environment,
+          add professional production elements and create
+          the video your brand needs.
+        </p>
+
+
+        <a
+          href="studio.html"
+          class="primary-btn"
+        >
+
+          Enter Production Studio
+
+          <span>
+            →
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
 
 
   <!-- =====================================================
-       SIMPLE THEME SCRIPT
+       FOOTER
   ====================================================== -->
 
-  <script>
+  <footer class="footer">
 
-    const themeToggle = document.getElementById("themeToggle");
 
-    themeToggle.addEventListener("click", () => {
+    <div class="footer-brand">
 
-      document.body.classList.toggle("light-mode");
+      <div class="brand-logo small-logo">
+
+        <img
+          src="https://raw.githubusercontent.com/shahneilkhan/asset/main/SNK%20LOGO.svg"
+          alt="SNK"
+        >
+
+      </div>
+
+
+      <div>
+
+        <strong>
+          SNK Ad Studio
+        </strong>
+
+        <span>
+          Your virtual production studio.
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-right">
+
+      <span>
+        Create without a traditional studio.
+      </span>
+
+      <span>
+        © 2026 SNK
+      </span>
+
+    </div>
+
+  </footer>
+
+</div>
+
+
+<!-- =====================================================
+     THEME SCRIPT
+====================================================== -->
+
+<script>
+
+  const themeToggle =
+    document.getElementById("themeToggle");
+
+
+  themeToggle.addEventListener(
+    "click",
+    () => {
+
+      document.body.classList.toggle(
+        "light-mode"
+      );
+
 
       const isLight =
-        document.body.classList.contains("light-mode");
+        document.body.classList.contains(
+          "light-mode"
+        );
+
 
       localStorage.setItem(
         "snk-theme",
-        isLight ? "light" : "dark"
+        isLight
+          ? "light"
+          : "dark"
       );
 
-    });
-
-
-    const savedTheme =
-      localStorage.getItem("snk-theme");
-
-    if (savedTheme === "light") {
-      document.body.classList.add("light-mode");
     }
+  );
 
-  </script>
+
+  const savedTheme =
+    localStorage.getItem(
+      "snk-theme"
+    );
+
+
+  if (
+    savedTheme === "light"
+  ) {
+
+    document.body.classList.add(
+      "light-mode"
+    );
+
+  }
+
+</script>
+
 
 </body>
 </html>
-```
